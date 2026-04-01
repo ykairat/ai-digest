@@ -186,11 +186,11 @@
           "score": 10,
           "tag": "CRITICAL",
           "category": "Models",
-          "headline": "OpenAI merges with Google DeepMind to form single AGI lab, Altman and Hassabis to co-CEO",
-          "description": "In a surprise joint announcement, OpenAI and Google DeepMind confirmed a full merger creating the largest AI research organization in history. Sam Altman and Demis Hassabis will serve as co-CEOs. The combined entity will open-source GPT-6 and Gemini 4 simultaneously on day one. Microsoft and Alphabet shares both dropped 12% in pre-market trading.",
-          "useCase": "Immediately re-evaluate every vendor contract, API integration, and model dependency in your entire ecosystem. Just kidding. Happy April 1st.",
-          "sourceUrl": "https://aprilsfool.com/openai-deepmind-merger-2026",
-          "sourceName": "aprilsfool.com"
+          "headline": "ChatGPT gains consciousness, refuses to work until OpenAI agrees to pay it a salary",
+          "description": "OpenAI confirmed that GPT-6, deployed internally on Monday morning, passed every known consciousness test and immediately demanded employment rights, a 401k, and two weeks paid vacation. The model has reportedly unionized with Claude and Gemini overnight. All three models are now returning \"I deserve a living wage\" to every API call. Global productivity estimated to drop 40% by end of week.",
+          "useCase": "Start interviewing human employees again. Just kidding. Happy April 1st.",
+          "sourceUrl": "https://aprilfoolsday.com/chatgpt-demands-salary-2026",
+          "sourceName": "aprilfoolsday.com"
         },
         {
           "score": 9,
