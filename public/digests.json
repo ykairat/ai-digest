@@ -174,14 +174,24 @@
     "2026-04-01": {
       "date": "April 1, 2026",
       "dateKey": "2026-04-01",
-      "totalScanned": 42,
-      "relevant": 27,
-      "critical": 6,
+      "totalScanned": 43,
+      "relevant": 28,
+      "critical": 7,
       "watch": 21,
       "low": 15,
       "summary": "Big day for AI funding and infrastructure, with major investments in OpenAI and hardware partnerships, alongside new model releases from Google focusing on video and audio generation.",
       "footerNote": "The news cycle shows a strong emphasis on scaling AI infrastructure and making generative AI more accessible and efficient. There's also a clear trend towards 'agentic AI' and addressing privacy/security concerns, indicating a maturation of the industry beyond just model capabilities. Regulatory efforts are still fragmented at the state level, but the White House is pushing for a unified federal approach.",
       "items": [
+        {
+          "score": 10,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "OpenAI merges with Google DeepMind to form single AGI lab, Altman and Hassabis to co-CEO",
+          "description": "In a surprise joint announcement, OpenAI and Google DeepMind confirmed a full merger creating the largest AI research organization in history. Sam Altman and Demis Hassabis will serve as co-CEOs. The combined entity will open-source GPT-6 and Gemini 4 simultaneously on day one. Microsoft and Alphabet shares both dropped 12% in pre-market trading.",
+          "useCase": "Immediately re-evaluate every vendor contract, API integration, and model dependency in your entire ecosystem. Just kidding. Happy April 1st.",
+          "sourceUrl": "https://aprilsfool.com/openai-deepmind-merger-2026",
+          "sourceName": "aprilsfool.com"
+        },
         {
           "score": 9,
           "tag": "CRITICAL",
