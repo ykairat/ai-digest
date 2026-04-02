@@ -110,7 +110,7 @@ export default function App() {
   const [dates, setDates] = useState([])
   const [cur, setCur] = useState(null)
   const [sidebar, setSidebar] = useState(false)
-  const [dark, setDark] = useState(() => localStorage.getItem('digest-dark') === 'true')
+  const [dark, setDark] = useState(() => localStorage.getItem('digest-dark') !== 'false')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [view, setView] = useState('read')
