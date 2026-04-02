@@ -1,20 +1,24 @@
 {
   "lastUpdated": "2026-04-02",
   "sourceNotes": {
-    "openai_changelog": "https://developers.openai.com/changelog/ works reliably",
-    "anthropic_releases": "https://docs.anthropic.com/en/release-notes/overview works reliably",
-    "gemini_changelog": "https://ai.google.dev/gemini-api/docs/changelog works reliably",
-    "n8n_releases": "https://docs.n8n.io/release-notes/ works reliably",
-    "zapier_updates": "https://community.zapier.com/product-updates may require login, check if accessible",
-    "anthropic_news": "https://www.anthropic.com/news works reliably"
+    "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-02. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
+    "anthropic_releases": "https://docs.anthropic.com/en/release-notes/overview returned 403 on 2026-04-02. Use WebSearch as fallback.",
+    "gemini_changelog": "https://ai.google.dev/gemini-api/docs/changelog returned 403 on 2026-04-02. Use WebSearch as fallback.",
+    "n8n_releases": "https://docs.n8n.io/release-notes/ returned 403 on 2026-04-02. Use WebSearch as fallback.",
+    "zapier_updates": "https://community.zapier.com/product-updates returned 403 on 2026-04-02. Use WebSearch as fallback.",
+    "anthropic_news": "https://www.anthropic.com/news returned 403 on 2026-04-02. Use WebSearch as fallback."
   },
   "searchTips": [
     "Generic AI news searches return too many aggregator results. Use specific product names.",
     "Asian sources often break news 6 to 12 hours before Western coverage.",
-    "Hacker News front page is a good signal for what builders care about."
+    "Hacker News front page is a good signal for what builders care about.",
+    "All 6 primary source URLs returned 403 on 2026-04-02. All appear to have bot protection. WebSearch is a reliable fallback for extracting recent changes from these sources.",
+    "Press release wires (24-7pressrelease, financialcontent) often carry open source launch announcements before major tech outlets."
   ],
   "qualityIssues": [],
   "improvements": [
-    "First run: 2026-04-02. Baseline established."
+    "First run: 2026-04-02. Baseline established.",
+    "2026-04-02: All 6 primary WebFetch sources returned 403. Compensated with 10 WebSearch queries. Consider adding alternative direct URLs (e.g., GitHub release pages, RSS feeds) for future runs.",
+    "2026-04-02: Digest produced 12 items (1 CRITICAL, 4 WATCH, 7 LOW). Distribution looks healthy."
   ]
 }
