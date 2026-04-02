@@ -65,25 +65,83 @@ function BarChart({ items, dark }) {
   )
 }
 
-function Card({ item }) {
+function CriticalCard({ item }) {
   return (
-    <div className={`card${item.tag === 'LOW' ? ' card-low' : ''}`}>
+    <div className="card card-critical-section">
       <div className="card-header">
-        <div className="card-score">{item.score}</div>
+        <div className="card-score card-score-critical">{item.score}</div>
         <div className="card-badges">
-          <span className={`tag-badge ${item.tag === 'CRITICAL' ? 'tag-critical' : item.tag === 'WATCH' ? 'tag-watch' : 'tag-low'}`}>{item.tag}</span>
+          <span className="tag-badge tag-critical">CRITICAL</span>
           <span className="cat-badge">{item.category}</span>
         </div>
       </div>
       <div className="card-headline">{item.headline}</div>
       <div className="card-desc">{item.description}</div>
-      <div className="card-usecase">{item.useCase}</div>
+      {item.action && <div className="card-action"><span className="action-label">Action:</span> {item.action}</div>}
+      {!item.action && item.useCase && <div className="card-action"><span className="action-label">Action:</span> {item.useCase}</div>}
       {item.sourceUrl && (
         <a className="card-source" href={item.sourceUrl} target="_blank" rel="noopener noreferrer">
           {item.sourceName || 'Source'}
         </a>
       )}
     </div>
+  )
+}
+
+function WatchCard({ item }) {
+  return (
+    <div className="card card-watch-section">
+      <div className="card-header">
+        <div className="card-score">{item.score}</div>
+        <div className="card-badges">
+          <span className="tag-badge tag-watch">WATCH</span>
+          <span className="cat-badge">{item.category}</span>
+        </div>
+      </div>
+      <div className="card-headline">{item.headline}</div>
+      <div className="card-desc">{item.description}</div>
+      {item.clientPitch && <div className="card-pitch"><span className="pitch-label">Client pitch:</span> {item.clientPitch}</div>}
+      {!item.clientPitch && item.useCase && <div className="card-pitch"><span className="pitch-label">Why it matters:</span> {item.useCase}</div>}
+      {item.sourceUrl && (
+        <a className="card-source" href={item.sourceUrl} target="_blank" rel="noopener noreferrer">
+          {item.sourceName || 'Source'}
+        </a>
+      )}
+    </div>
+  )
+}
+
+function ContextRow({ item }) {
+  return (
+    <div className="context-row">
+      <span className="context-score">{item.score}</span>
+      <span className="cat-badge cat-badge-sm">{item.category}</span>
+      <div className="context-content">
+        <span className="context-headline">{item.headline}</span>
+        <span className="context-desc">{item.description}</span>
+        {item.useCase && <span className="context-why">{item.useCase}</span>}
+      </div>
+      {item.sourceUrl && (
+        <a className="card-source" href={item.sourceUrl} target="_blank" rel="noopener noreferrer">
+          {item.sourceName || 'Source'}
+        </a>
+      )}
+    </div>
+  )
+}
+
+function CopyButton({ text }) {
+  const [copied, setCopied] = useState(false)
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
+  return (
+    <button className="btn copy-btn" onClick={handleCopy}>
+      {copied ? 'Copied' : 'Copy briefing'}
+    </button>
   )
 }
 
@@ -95,6 +153,8 @@ export default function App() {
   const [dark, setDark] = useState(() => localStorage.getItem('ai-digest-dark') === 'true')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [contextOpen, setContextOpen] = useState(false)
+  const [filterCat, setFilterCat] = useState(null)
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
@@ -121,8 +181,8 @@ export default function App() {
   const currentIdx = dates.indexOf(currentDate)
   const hasPrev = currentIdx < dates.length - 1
   const hasNext = currentIdx > 0
-  const goPrev = () => hasPrev && setCurrentDate(dates[currentIdx + 1])
-  const goNext = () => hasNext && setCurrentDate(dates[currentIdx - 1])
+  const goPrev = () => { hasPrev && setCurrentDate(dates[currentIdx + 1]); setFilterCat(null) }
+  const goNext = () => { hasNext && setCurrentDate(dates[currentIdx - 1]); setFilterCat(null) }
 
   const digest = digests && currentDate ? digests[currentDate] : null
 
@@ -136,6 +196,14 @@ export default function App() {
     return dt.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
   }
 
+  const allItems = digest.items || []
+  const filtered = filterCat ? allItems.filter(i => i.category === filterCat) : allItems
+  const critical = filtered.filter(i => i.score >= 8)
+  const watch = filtered.filter(i => i.score >= 6 && i.score <= 7)
+  const context = filtered.filter(i => i.score < 6)
+
+  const categories = [...new Set(allItems.map(i => i.category))].sort()
+
   return (
     <>
       {sidebar && <div className="sidebar-overlay" onClick={() => setSidebar(false)} />}
@@ -148,7 +216,7 @@ export default function App() {
           {dates.map((d, i) => (
             <button key={d}
               className={`sidebar-item ${d === currentDate ? 'active' : ''}`}
-              onClick={() => { setCurrentDate(d); setSidebar(false) }}>
+              onClick={() => { setCurrentDate(d); setSidebar(false); setFilterCat(null) }}>
               {d}{i === 0 && <span className="latest-label">latest</span>}
             </button>
           ))}
@@ -177,33 +245,84 @@ export default function App() {
                 : <svg width="20" height="20" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.003 8.003 0 1010.586 10.586z" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinejoin="round"/></svg>}
             </button>
           </div>
-          <div className="pills">
-            <span className="pill">{digest.totalScanned} scanned</span>
-            <span className="pill">{digest.relevant} relevant</span>
-            {digest.critical > 0 && <span className="pill pill-critical">{digest.critical} CRITICAL</span>}
-            {digest.watch > 0 && <span className="pill pill-watch">{digest.watch} WATCH</span>}
-            {digest.low > 0 && <span className="pill pill-low">{digest.low} LOW</span>}
+
+          <div className="briefing">
+            <div className="briefing-text">{digest.summary}</div>
+            <CopyButton text={digest.summary} />
           </div>
-          <div className="summary">{digest.summary}</div>
+
+          <div className="pills">
+            <span className="pill">{digest.totalScanned} items</span>
+            {digest.critical > 0 && <span className="pill pill-critical">{digest.critical} action</span>}
+            {digest.watch > 0 && <span className="pill pill-watch">{digest.watch} watch</span>}
+            {digest.low > 0 && <span className="pill pill-low">{digest.low} context</span>}
+          </div>
+
+          {categories.length > 1 && (
+            <div className="filters">
+              <button className={`filter-btn ${!filterCat ? 'filter-active' : ''}`} onClick={() => setFilterCat(null)}>All</button>
+              {categories.map(c => (
+                <button key={c} className={`filter-btn ${filterCat === c ? 'filter-active' : ''}`} onClick={() => setFilterCat(filterCat === c ? null : c)}>{c}</button>
+              ))}
+            </div>
+          )}
           <div className="divider" />
         </header>
+
         <main>
-          {digest.items.length === 0 ? (
+          {allItems.length === 0 ? (
             <div className="center-msg">Nothing critical today.</div>
           ) : (
             <>
-              <div className="cards">
-                {digest.items.map((item, i) => <Card key={i} item={item} />)}
-              </div>
-              {digest.items.length >= 5 && (
+              {critical.length > 0 && (
+                <section className="section">
+                  <div className="section-header">
+                    <h2 className="section-title section-title-critical">Act on this</h2>
+                    <span className="section-count">{critical.length}</span>
+                  </div>
+                  <div className="cards">
+                    {critical.map((item, i) => <CriticalCard key={i} item={item} />)}
+                  </div>
+                </section>
+              )}
+
+              {watch.length > 0 && (
+                <section className="section">
+                  <div className="section-header">
+                    <h2 className="section-title section-title-watch">New capabilities</h2>
+                    <span className="section-count">{watch.length}</span>
+                  </div>
+                  <div className="cards">
+                    {watch.map((item, i) => <WatchCard key={i} item={item} />)}
+                  </div>
+                </section>
+              )}
+
+              {context.length > 0 && (
+                <section className="section">
+                  <div className="section-header section-header-toggle" onClick={() => setContextOpen(!contextOpen)}>
+                    <h2 className="section-title section-title-context">Market context</h2>
+                    <span className="section-count">{context.length}</span>
+                    <span className="toggle-arrow">{contextOpen ? '\u25B2' : '\u25BC'}</span>
+                  </div>
+                  {contextOpen && (
+                    <div className="context-list">
+                      {context.map((item, i) => <ContextRow key={i} item={item} />)}
+                    </div>
+                  )}
+                </section>
+              )}
+
+              {allItems.length >= 5 && (
                 <div className="charts">
-                  <DonutChart items={digest.items} dark={dark} />
-                  <BarChart items={digest.items} dark={dark} />
+                  <DonutChart items={allItems} dark={dark} />
+                  <BarChart items={allItems} dark={dark} />
                 </div>
               )}
             </>
           )}
         </main>
+
         <footer>
           {digest.footerNote && <div className="footer-note">{digest.footerNote}</div>}
           <div className="footer-count">{dates.length} digest{dates.length !== 1 ? 's' : ''} in archive</div>
