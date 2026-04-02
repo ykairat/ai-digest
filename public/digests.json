@@ -381,233 +381,163 @@
     "2026-04-02": {
       "date": "April 02, 2026",
       "dateKey": "2026-04-02",
-      "totalScanned": 22,
-      "relevant": 16,
-      "critical": 5,
-      "watch": 11,
-      "low": 6,
-      "summary": "Big day. GPT-5.4 is rolling out with native computer-use capabilities, marking a major leap for agentic workflows. The Linux Foundation launched the Agentic AI Foundation with Anthropic contributing MCP as an open standard. Google shipped ADK 1.0 for Java and Go, and OpenAI Codex got a major plugin overhaul.",
-      "footerNote": "Duplicates removed from previous digests: OpenAI $122B round, Q1 VC $297B record, Huawei 950PR chip, Anthropic code leak, White House AI framework, state-level regulation roundups, Google Gemini March updates.",
+      "totalScanned": 15,
+      "relevant": 11,
+      "critical": 4,
+      "watch": 7,
+      "low": 4,
+      "summary": "Quiet day. No major new model drops, but the open-source gap continues to close fast. DeepSeek-V3.2-Speciale now beats GPT-5 on reasoning benchmarks, OpenAI ramps up acquisitions of developer tooling companies, and Claw Code launches a new open-source agent framework to significant early traction.",
+      "footerNote": "Open-source parity with frontier models is now measured in weeks, not months. The implications for build-vs-buy decisions in AI ecosystems are significant.",
       "items": [
         {
           "score": 9,
           "tag": "CRITICAL",
-          "category": "Models",
-          "headline": "GPT-5.4 Rolls Out with Native Computer-Use and 1M Token Context",
-          "description": "OpenAI began rolling out GPT-5.4 with built-in computer-use capabilities, allowing the model to directly interact with desktop environments, click buttons, and navigate software. It also supports a 1 million token context window.",
-          "useCase": "Build an AI agent that autonomously navigates enterprise software (ERP, CRM) to complete multi-step workflows like invoice processing or customer onboarding without custom API integrations.",
-          "sourceUrl": "",
-          "sourceName": "openai.com"
+          "category": "Open-Source",
+          "headline": "DeepSeek-V3.2-Speciale Surpasses GPT-5 on Reasoning Benchmarks",
+          "description": "The DeepSeek-V3.2-Speciale variant now surpasses GPT-5 and reaches Gemini-3.0-Pro-level reasoning on AIME and HMMT 2025 benchmarks. Open-weight models now trail proprietary frontier models by only about three months on average.",
+          "useCase": "Swap expensive proprietary API calls for self-hosted DeepSeek inference on reasoning-heavy agent pipelines, cutting costs while matching or exceeding closed-model quality.",
+          "sourceUrl": "https://llm-stats.com/ai-news",
+          "sourceName": "LLM Stats"
         },
         {
           "score": 8,
           "tag": "CRITICAL",
+          "category": "Developer Tooling",
+          "headline": "Claw Code Launches Open-Source AI Coding Agent Framework, Hits 72K GitHub Stars",
+          "description": "Claw Code, a Python-and-Rust AI coding agent framework, launched its first structured release with a stable Python API, expanded tooling docs, and Rust runtime modules. It gained 72,000 GitHub stars in its first days.",
+          "useCase": "Evaluate as an open, auditable alternative to proprietary coding agent platforms for building custom AI-powered development workflows and CI/CD automation.",
+          "sourceUrl": "https://www.financialcontent.com/article/247pressrelease-2026-4-2-claw-code-launches-open-source-ai-coding-agent-framework-with-72000-github-stars-in-first-days",
+          "sourceName": "FinancialContent"
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Industry",
+          "headline": "OpenAI Acquires Astral and Promptfoo, Hits 6 Acquisitions in 2026",
+          "description": "OpenAI acquired open-source developer tools company Astral on March 19 and AI testing tool Promptfoo, bringing its 2026 acquisition total to six -- nearly matching all of 2025. The M&A spree signals aggressive consolidation of the developer tooling ecosystem.",
+          "useCase": "Monitor how OpenAI integrates these tools into its platform. If you depend on Astral or Promptfoo, plan for potential API changes or lock-in as they become OpenAI-native.",
+          "sourceUrl": "https://news.crunchbase.com/ma/data-openai-2023-2026-acquisitions-open-source-astral-promptfoo/",
+          "sourceName": "Crunchbase News"
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Industry",
+          "headline": "80% of US AI Startups Reportedly Using Chinese Base Models",
+          "description": "An Andreessen Horowitz partner estimated that 80 percent of US startups now use Chinese base models like DeepSeek, Qwen, and GLM to develop derivative products. This marks a significant shift in the global AI supply chain.",
+          "useCase": "Evaluate regulatory and supply chain risk if your AI stack depends on Chinese base models, especially as US federal AI policy frameworks advance toward potential restrictions.",
+          "sourceUrl": "https://cmr.berkeley.edu/2026/01/the-coming-disruption-how-open-source-ai-will-challenge-closed-model-giants/",
+          "sourceName": "California Management Review"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Gemini 3.1 Flash-Lite Ships at 2.5x Speed and $0.25 per Million Input Tokens",
+          "description": "Google released Gemini 3.1 Flash-Lite, an efficiency-focused model with 2.5x faster response times and 45% faster output generation. Priced at $0.25 per million input tokens, it targets high-volume, cost-sensitive workloads.",
+          "useCase": "Route low-complexity agent subtasks and classification jobs to Flash-Lite to dramatically reduce inference costs in multi-model orchestration pipelines.",
+          "sourceUrl": "https://llm-stats.com/llm-updates",
+          "sourceName": "LLM Stats"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Open-Source",
+          "headline": "GLM-5 from Zhipu AI Launches as 744B Parameter Open-Source Model",
+          "description": "Zhipu AI released GLM-5, a 744B parameter open-source LLM with 40B active parameters using mixture-of-experts, trained on 28.5 trillion tokens. It represents a new scale frontier for open-weight models.",
+          "useCase": "Benchmark GLM-5 against existing models for domain-specific fine-tuning tasks where large MoE architectures can offer better quality at manageable inference cost.",
+          "sourceUrl": "https://www.bentoml.com/blog/navigating-the-world-of-open-source-large-language-models",
+          "sourceName": "BentoML"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Industry",
+          "headline": "Anthropic Approaches $19 Billion Annualized Revenue",
+          "description": "Anthropic is now approaching $19 billion in annualized revenue, up sharply from prior quarters. The company ranks third among private AI companies at a $380B valuation after its $30B Series G.",
+          "useCase": "Anthropic's revenue trajectory validates enterprise demand for Claude-based solutions. Factor this financial stability into long-term vendor selection for AI infrastructure.",
+          "sourceUrl": "https://www.crescendo.ai/news/latest-ai-news-and-updates",
+          "sourceName": "Crescendo AI"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
           "category": "Infrastructure",
-          "headline": "Linux Foundation Launches Agentic AI Foundation with Anthropic MCP Contribution",
-          "description": "The Linux Foundation created a new foundation dedicated to agentic AI standards. Anthropic contributed the Model Context Protocol (MCP) as an open standard for AI agent interoperability.",
-          "useCase": "When building multi-agent systems that combine Claude, GPT, and open-source models, MCP as an open standard means a single protocol for tool use and context sharing across all agents instead of custom adapters per vendor.",
-          "sourceUrl": "",
-          "sourceName": "linuxfoundation.org"
-        },
-        {
-          "score": 8,
-          "tag": "CRITICAL",
-          "category": "Tools",
-          "headline": "Google Ships ADK 1.0 for Java and Go, Publishes Agent Skills Guide",
-          "description": "Google released stable 1.0 versions of its Agent Development Kit for Java and Go, extending beyond the original Python SDK. The release includes a comprehensive guide for building reusable agent skills.",
-          "useCase": "Java-heavy enterprise teams can now build production multi-agent systems with Google's framework. The skills guide provides patterns for creating reusable agent capabilities that can be shared across projects.",
-          "sourceUrl": "https://developers.googleblog.com/announcing-adk-for-java-100-building-the-future-of-ai-agents-in-java/",
-          "sourceName": "developers.googleblog.com"
-        },
-        {
-          "score": 8,
-          "tag": "CRITICAL",
-          "category": "Tools",
-          "headline": "OpenAI Codex Ships Major Update with First-Class Plugin Architecture",
-          "description": "OpenAI released a major Codex update introducing a plugin architecture that lets developers extend Codex with custom tools, integrations, and workflows natively.",
-          "useCase": "Build custom Codex plugins that connect to your internal APIs, databases, and deployment pipelines, creating an AI coding assistant that understands your specific infrastructure and can deploy directly.",
-          "sourceUrl": "",
-          "sourceName": "openai.com"
-        },
-        {
-          "score": 8,
-          "tag": "CRITICAL",
-          "category": "Hardware",
-          "headline": "NVIDIA Acquires Groq Inference Technology and Key Talent Including Founder",
-          "description": "NVIDIA acquired key inference technology and talent from Groq, including founder Jonathan Ross. This gives NVIDIA proprietary low-latency inference IP to complement its GPU training dominance.",
-          "useCase": "NVIDIA controlling both training and inference hardware means tighter integration in the full AI pipeline. Architects should evaluate how this affects vendor lock-in decisions for inference infrastructure.",
-          "sourceUrl": "",
-          "sourceName": "nvidia.com"
+          "headline": "Amazon Commits $200 Billion in 2026 Capex, Largest Among Hyperscalers",
+          "description": "Amazon committed $200 billion in capital expenditure for 2026, the largest single-year spend among hyperscalers. Microsoft is spending roughly $25 billion per quarter on GPUs and custom silicon for AI inference.",
+          "useCase": "Expect significant new AWS AI service launches and capacity expansions. Position workloads to take advantage of likely aggressive pricing on new inference infrastructure.",
+          "sourceUrl": "https://tech-insider.org/big-tech-ai-infrastructure-spending-2026/",
+          "sourceName": "Tech Insider"
         },
         {
           "score": 7,
           "tag": "WATCH",
-          "category": "Regulation",
-          "headline": "US Federal Judge Blocks Trump Administration Ban on Anthropic AI in Government",
-          "description": "A federal judge issued an injunction blocking the Trump administration's executive order that would have banned Anthropic's AI products from use in US government agencies.",
-          "useCase": "Government-facing AI projects can continue using Claude. This ruling signals judicial pushback on politically-motivated AI vendor bans, which affects procurement strategy for public sector clients.",
-          "sourceUrl": "",
-          "sourceName": "reuters.com"
+          "category": "Industry",
+          "headline": "Perplexity AI Bids $38B for Chrome Browser Amid Regulatory Uncertainty",
+          "description": "Perplexity AI's $38 billion bid to acquire Chrome from Google remains active, but regulatory complexity and Google's anticipated appeal make a near-term deal unlikely.",
+          "useCase": "If Perplexity acquires Chrome, the browser becomes an AI-native search surface. Plan for potential shifts in how users discover and interact with AI-powered services.",
+          "sourceUrl": "https://aifundingtracker.com/ai-startup-funding-news-today/",
+          "sourceName": "AI Funding Tracker"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Hardware",
+          "headline": "Huawei 950PR AI Chip Gets Major Orders from ByteDance and Alibaba",
+          "description": "Huawei rolled out its 950PR AI chip optimized for inference workloads. ByteDance and Alibaba have placed large orders, strengthening China's domestic AI chip supply chain.",
+          "useCase": "Track the 950PR's inference benchmarks and software ecosystem maturity. A viable NVIDIA alternative in China could reshape global AI infrastructure pricing dynamics.",
+          "sourceUrl": "https://blog.mean.ceo/ai-product-launches-news-april-2026/",
+          "sourceName": "Mean CEO Blog"
         },
         {
           "score": 7,
           "tag": "WATCH",
           "category": "Models",
-          "headline": "Grok 4.20 Beta 2 Introduces Four-Agent Parallel Architecture",
-          "description": "xAI released Grok 4.20 Beta 2 featuring a four-agent parallel architecture where specialized sub-agents handle different aspects of a query simultaneously before combining results.",
-          "useCase": "Study this architecture pattern for your own multi-agent designs. Four parallel specialists merging results is a concrete implementation of the fan-out/fan-in pattern applicable to complex research or analysis workflows.",
-          "sourceUrl": "",
-          "sourceName": "x.ai"
+          "headline": "Gemini 3.1 Flash Live Debuts as Google's Voice-First AI Model",
+          "description": "Google launched Gemini 3.1 Flash Live, designed for natural-rhythm voice interactions with low latency. It is positioned as Google's most advanced voice-first AI model.",
+          "useCase": "Integrate Flash Live into voice-driven agent interfaces where conversation speed and naturalness are critical, such as customer service or real-time assistant applications.",
+          "sourceUrl": "https://llm-stats.com/llm-updates",
+          "sourceName": "LLM Stats"
         },
         {
-          "score": 7,
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Open-Source",
+          "headline": "Qwen3.5 Expands Multilingual Coverage to 200+ Languages",
+          "description": "Alibaba's Qwen3.5 model expands multilingual support to over 200 languages and dialects, significantly broadening accessibility for non-English AI applications.",
+          "useCase": "Use Qwen3.5 for multilingual agent deployments in markets where English-centric models underperform, especially for localization and translation pipelines.",
+          "sourceUrl": "https://www.bentoml.com/blog/navigating-the-world-of-open-source-large-language-models",
+          "sourceName": "BentoML"
+        },
+        {
+          "score": 6,
           "tag": "WATCH",
           "category": "Research",
-          "headline": "Google TurboQuant Achieves 6x KV-Cache Memory Reduction at Near-Zero Quality Loss",
-          "description": "Google researchers published TurboQuant, a quantization technique that reduces key-value cache memory usage by 6x while maintaining near-zero quality degradation in large language models.",
-          "useCase": "When deploying LLMs with long context windows on limited GPU memory, TurboQuant-style quantization enables serving more concurrent users on the same hardware, directly reducing inference costs.",
-          "sourceUrl": "",
-          "sourceName": "arxiv.org"
-        },
-        {
-          "score": 7,
-          "tag": "WATCH",
-          "category": "Hardware",
-          "headline": "NVIDIA Rubin Platform Enters Full Production, Cloud Deployments in H2 2026",
-          "description": "NVIDIA confirmed that its next-generation Rubin GPU platform has entered full production, with cloud provider deployments expected in the second half of 2026.",
-          "useCase": "Factor Rubin availability into infrastructure planning for late 2026. Cloud providers will offer Rubin instances that significantly outperform current H100/H200 for both training and inference workloads.",
-          "sourceUrl": "",
-          "sourceName": "nvidia.com"
-        },
-        {
-          "score": 7,
-          "tag": "WATCH",
-          "category": "Infrastructure",
-          "headline": "OpenAI Signs 6-Gigawatt Multi-Year Infrastructure Deal with AMD",
-          "description": "OpenAI signed a multi-year deal with AMD for 6 gigawatts of compute infrastructure, diversifying its hardware supply beyond NVIDIA.",
-          "useCase": "OpenAI diversifying to AMD signals that AMD GPUs are now production-viable for frontier model training. Evaluate AMD MI-series for your own infrastructure to reduce NVIDIA dependency and potentially lower costs.",
-          "sourceUrl": "",
-          "sourceName": "amd.com"
-        },
-        {
-          "score": 7,
-          "tag": "WATCH",
-          "category": "Models",
-          "headline": "Apple Announces AI-Powered Siri Rebuild Using Google's 1.2T Parameter Gemini Model",
-          "description": "Apple confirmed it is rebuilding Siri using a custom version of Google's Gemini model with 1.2 trillion parameters, replacing its in-house models for the core assistant experience.",
-          "useCase": "Apple choosing Gemini over building in-house validates the 'buy vs build' decision for AI capabilities. For ecosystem architects, this signals Gemini becoming the de facto on-device AI for iOS, affecting app integration strategies.",
-          "sourceUrl": "",
-          "sourceName": "apple.com"
+          "headline": "Open-Source AI Tool Outperforms Large LLMs in Scientific Literature Reviews",
+          "description": "A Nature-published study shows a cheap, transparent open-source AI model reviews scientific literature better than some major LLMs and matches human expert citation accuracy. Researchers can deploy it on their own systems.",
+          "useCase": "Deploy for automated research monitoring pipelines that need high citation accuracy, such as competitive intelligence or patent landscape analysis systems.",
+          "sourceUrl": "https://www.nature.com/articles/d41586-026-00347-9",
+          "sourceName": "Nature"
         },
         {
           "score": 6,
           "tag": "WATCH",
           "category": "Infrastructure",
-          "headline": "Oracle Cuts 20,000-30,000 Jobs to Redirect $8-10B Toward AI Infrastructure",
-          "description": "Oracle is laying off up to 30,000 employees to redirect an estimated $8-10 billion toward AI infrastructure investment, including GPU clusters and AI-optimized cloud services.",
-          "useCase": "Oracle Cloud becoming more AI-focused means new GPU instances and AI services for enterprise clients already on Oracle. Track OCI AI offerings if your clients use Oracle for database or ERP.",
-          "sourceUrl": "",
-          "sourceName": "reuters.com"
+          "headline": "European AI Infrastructure Boom: Major Data Centers in Finland, France, and Sweden",
+          "description": "Europe is investing heavily in AI infrastructure with Nebius building a 310 MW data center in Finland, a $1.4B AI campus near Paris backed by NVIDIA, and a $9.9B AI hub in Sweden.",
+          "useCase": "Consider European data center options for GDPR-compliant AI workloads as new capacity comes online, potentially offering competitive pricing to attract initial tenants.",
+          "sourceUrl": "https://blog.mean.ceo/deeptech-europe-news-april-2026/",
+          "sourceName": "Mean CEO Blog"
         },
         {
           "score": 6,
           "tag": "WATCH",
           "category": "Regulation",
-          "headline": "EU Institutions Ban AI-Generated Press Content from Official Communications",
-          "description": "EU institutions have banned the use of AI-generated content in official press releases and communications, requiring all public-facing content to be human-authored.",
-          "useCase": "If building AI content generation tools for European government or institutional clients, human-in-the-loop review and clear labeling of AI assistance will be mandatory, not optional.",
-          "sourceUrl": "",
-          "sourceName": "ec.europa.eu"
-        },
-        {
-          "score": 6,
-          "tag": "WATCH",
-          "category": "Hardware",
-          "headline": "Samsung Targets 800 Million Gemini AI Devices by End of 2026",
-          "description": "Samsung announced plans to have 800 million devices running Google's Gemini AI capabilities by the end of 2026, spanning phones, TVs, appliances, and wearables.",
-          "useCase": "800 million Gemini-enabled Samsung devices creates a massive on-device AI platform. Build integrations that leverage on-device Gemini for real-time processing without cloud round-trips in IoT and consumer applications.",
-          "sourceUrl": "",
-          "sourceName": "samsung.com"
-        },
-        {
-          "score": 6,
-          "tag": "WATCH",
-          "category": "Regulation",
-          "headline": "Perplexity AI Faces Class-Action Lawsuit Over Sharing User Chat Data",
-          "description": "A class-action lawsuit was filed against Perplexity AI alleging the company shared user chat data with Meta and Google without consent, violating privacy laws.",
-          "useCase": "If using Perplexity or similar AI search tools in enterprise workflows, audit data sharing policies. This lawsuit highlights the risk of sensitive business queries being shared with third parties.",
-          "sourceUrl": "",
-          "sourceName": "reuters.com"
-        },
-        {
-          "score": 6,
-          "tag": "WATCH",
-          "category": "Funding",
-          "headline": "Replit Triples Valuation to $9B as Vibe Coding Goes Mainstream",
-          "description": "Replit raised a new round tripling its valuation to $9 billion, driven by explosive growth in AI-assisted coding. The company coined the term 'vibe coding' for its natural language code generation approach.",
-          "useCase": "Replit at $9B validates that AI-first development environments are a major market. Evaluate Replit's agent capabilities for rapid prototyping in your automation workflows.",
-          "sourceUrl": "",
-          "sourceName": "techcrunch.com"
-        },
-        {
-          "score": 6,
-          "tag": "WATCH",
-          "category": "Hardware",
-          "headline": "AWS Trainium3 Enters Preview with 3nm Process and 2x Performance",
-          "description": "Amazon Web Services opened preview access for Trainium3, its third-generation custom AI chip built on a 3nm process with double the performance of Trainium2.",
-          "useCase": "If running AI workloads on AWS, Trainium3 instances will offer significantly better price-performance than GPU instances. Plan migrations for cost-sensitive inference workloads.",
-          "sourceUrl": "",
-          "sourceName": "aws.amazon.com"
-        },
-        {
-          "score": 5,
-          "tag": "LOW",
-          "category": "Funding",
-          "headline": "Shield AI Raises $2.25B Total for Autonomous Defense Pilot Platform",
-          "description": "Shield AI raised additional funding bringing its total to $2.25 billion for its autonomous pilot platform used in defense applications.",
-          "useCase": "Defense-specific AI funding. Relevant only if working in military or dual-use autonomous systems. The autonomous pilot pattern could inform civilian drone automation architectures.",
-          "sourceUrl": "",
-          "sourceName": "shieldai.com"
-        },
-        {
-          "score": 5,
-          "tag": "LOW",
-          "category": "Funding",
-          "headline": "Sycamore Raises $65M Seed for Enterprise AI Agent Platform",
-          "description": "Sycamore, an enterprise AI agent startup, raised $65 million in seed funding to build a platform for deploying AI agents in business workflows.",
-          "useCase": "Another entrant in the crowded enterprise AI agent space. Worth tracking if they differentiate on specific vertical capabilities, but the market is saturated with similar offerings.",
-          "sourceUrl": "",
-          "sourceName": "techcrunch.com"
-        },
-        {
-          "score": 5,
-          "tag": "LOW",
-          "category": "Funding",
-          "headline": "Chinese AI Labs Z.ai and MiniMax Debut on Hong Kong Stock Exchange",
-          "description": "Two Chinese AI companies, Z.ai and MiniMax, began trading on the Hong Kong Stock Exchange, marking a new wave of Chinese AI companies going public.",
-          "useCase": "IPOs signal maturity in China's AI market. Relevant for architects building systems that need to interoperate with Chinese AI providers or deploy in Chinese markets.",
-          "sourceUrl": "",
-          "sourceName": "scmp.com"
-        },
-        {
-          "score": 5,
-          "tag": "LOW",
-          "category": "Models",
-          "headline": "Mistral Releases Small 4 Model",
-          "description": "Mistral released Small 4, its latest compact model optimized for edge deployment and low-latency inference.",
-          "useCase": "Another small model option for edge deployment. Evaluate against Gemma, Phi, and Llama variants for on-device use cases where latency and memory constraints matter.",
-          "sourceUrl": "",
-          "sourceName": "mistral.ai"
-        },
-        {
-          "score": 4,
-          "tag": "LOW",
-          "category": "Hardware",
-          "headline": "NVIDIA Announces Computing Module for Space-Based AI Data Centers",
-          "description": "NVIDIA announced a computing module designed for use in space-based data centers, enabling AI processing in orbit for satellite and space applications.",
-          "useCase": "Niche space application. Not relevant for most ecosystem architects unless working in satellite or space industry. The radiation-hardened design patterns could inform extreme-environment edge computing.",
-          "sourceUrl": "",
-          "sourceName": "nvidia.com"
+          "headline": "TRUMP AMERICA AI Act Draft and NY RAISE Act Advance Federal AI Regulation",
+          "description": "Senator Blackburn released the TRUMP AMERICA AI Act discussion draft on March 18. New York's proposed RAISE Act targets developers with high training costs, with penalties up to $30M for repeat violations.",
+          "useCase": "Begin compliance gap analysis now if building high-risk AI systems. The federal preemption push may simplify state-by-state compliance but could impose new documentation requirements.",
+          "sourceUrl": "https://kjk.com/2026/04/01/how-the-federal-ai-regulation-push-could-impact-your-business/",
+          "sourceName": "KJK Law"
         }
       ]
     }
