@@ -199,7 +199,7 @@ export default function App() {
         )}
 
         {view === 'read' && (
-          <article>
+          <article key={cur}>
             {/* Date and briefing */}
             <header className="digest-header">
               <h1 className="date">{fmt(cur)}</h1>
