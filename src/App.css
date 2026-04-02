@@ -493,8 +493,41 @@ section:first-of-type { margin-top: .5rem; }
 }
 
 @media (max-width: 500px) {
-  .page { padding: 0 .6rem 2rem; }
-  .date { font-size: 1.25rem; }
-  .briefing { flex-direction: column; }
-  .item-pitch-full { flex-direction: column; }
+  .page { padding: 0 .65rem 2rem; }
+
+  /* Larger tap targets */
+  .icon { padding: 10px; min-width: 44px; min-height: 44px; }
+  .star { font-size: 1.2rem; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .copy { padding: 6px 12px; font-size: .7rem; }
+  .show-more { padding: .65rem; font-size: .8rem; }
+
+  /* Readable text */
+  .date { font-size: 1.3rem; }
+  .briefing { flex-direction: column; gap: .5rem; }
+  .briefing p { font-size: .88rem; }
+  .item-hl { font-size: .9rem; }
+  .item-desc { font-size: .82rem; line-height: 1.55; }
+  .item-cat { font-size: .65rem; }
+  .item-tl { font-size: .6rem; }
+  .item-action { font-size: .82rem; padding: .5rem .65rem; }
+  .item-pitch { font-size: .8rem; }
+  .item-pitch-full { flex-direction: column; gap: .4rem; font-size: .82rem; }
+  .item-tool { font-size: .6rem; }
+  .section-label { font-size: .7rem; }
+
+  /* Fix critical card on narrow screens */
+  .item-crit { margin: 0 -.35rem .5rem; padding: .85rem .65rem; }
+
+  /* More breathing room between items */
+  .item { padding: 1rem 0; }
+
+  /* Counts wrap nicely */
+  .counts { gap: .5rem; flex-wrap: wrap; }
+
+  /* Search input comfortable */
+  .search input { font-size: 16px; padding: .65rem .75rem; }
+
+  /* Sidebar wider on mobile */
+  .sidebar { width: 280px; }
+  .sb-item { padding: .55rem .65rem; font-size: .82rem; min-height: 44px; }
 }

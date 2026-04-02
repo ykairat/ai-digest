@@ -130,6 +130,22 @@ export default function App() {
   const prev = useCallback(() => { if (ci < dates.length - 1) { setCur(dates[ci + 1]); setShowMoreWatch(false) } }, [ci, dates])
   const next = useCallback(() => { if (ci > 0) { setCur(dates[ci - 1]); setShowMoreWatch(false) } }, [ci, dates])
 
+  // Swipe detection for mobile date navigation
+  useEffect(() => {
+    let startX = 0, startY = 0
+    const onStart = e => { startX = e.touches[0].clientX; startY = e.touches[0].clientY }
+    const onEnd = e => {
+      const dx = e.changedTouches[0].clientX - startX
+      const dy = e.changedTouches[0].clientY - startY
+      if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        if (dx > 0) prev(); else next()
+      }
+    }
+    window.addEventListener('touchstart', onStart, { passive: true })
+    window.addEventListener('touchend', onEnd, { passive: true })
+    return () => { window.removeEventListener('touchstart', onStart); window.removeEventListener('touchend', onEnd) }
+  }, [prev, next])
+
   useEffect(() => {
     const h = e => {
       if (e.target.tagName === 'INPUT') return
