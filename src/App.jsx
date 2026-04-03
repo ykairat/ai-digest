@@ -29,8 +29,12 @@ function Star({ dateKey, item, onToggle }) {
   return <button className={`star ${on ? 'on' : ''}`} onClick={e => { e.stopPropagation(); toggleSave(dateKey, item); set(!on); onToggle?.() }}>{on ? '\u2605' : '\u2606'}</button>
 }
 
-function Item({ item, dateKey, onSave, autoOpen }) {
-  const [open, setOpen] = useState(autoOpen || false)
+function Item({ item, dateKey, onSave, autoOpen, onAutoOpened }) {
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    if (autoOpen) { setOpen(true); onAutoOpened?.() }
+  }, [autoOpen])
   const isCrit = item.score >= 8
   const insight = item.useCase || item.action || item.clientPitch || ''
   const srcs = getSources(item)
@@ -216,14 +220,14 @@ export default function App() {
             {crit.length > 0 && (
               <section>
                 <div className="section-line line-crit"><span>Critical</span></div>
-                {crit.map((item, i) => <Item key={`c${i}`} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} autoOpen={autoExpand === item.headline} />)}
+                {crit.map((item, i) => <Item key={`c${i}`} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} autoOpen={autoExpand === item.headline} onAutoOpened={() => setAutoExpand(null)} />)}
               </section>
             )}
 
             {notable.length > 0 && (
               <section>
                 <div className="section-line line-note"><span>Notable</span></div>
-                {notable.map((item, i) => <Item key={`n${i}`} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} autoOpen={autoExpand === item.headline} />)}
+                {notable.map((item, i) => <Item key={`n${i}`} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} autoOpen={autoExpand === item.headline} onAutoOpened={() => setAutoExpand(null)} />)}
               </section>
             )}
 
