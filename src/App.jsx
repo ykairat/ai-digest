@@ -73,7 +73,7 @@ function WeeklySummary({ digests, dates, currentDate }) {
   if (wd.length < 2) return null
   const wi = wd.flatMap(d => digests[d]?.items || [])
   if (wi.length === 0) return null
-  const topItems = wi.filter(i => i.score >= 7).sort((a, b) => b.score - a.score).slice(0, 7)
+  const topItems = wi.filter(i => i.score >= 7 && !i.headline?.toLowerCase().includes('consciousness') && !i.sourceUrl?.includes('aprilfoolsday')).sort((a, b) => b.score - a.score).slice(0, 7)
   if (topItems.length === 0) return null
 
   return (
