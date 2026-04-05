@@ -875,120 +875,219 @@
     "2026-04-05": {
       "dateKey": "2026-04-05",
       "date": "April 5, 2026",
-      "summary": "Anthropic cuts off Claude subscription access for third party tools effective immediately, Google sets June deprecation deadlines across four Gemini model families, and OpenAI confirms the Assistants API shuts down August 26 with mandatory migration to Responses API.",
-      "totalScanned": 4,
-      "relevant": 4,
-      "critical": 2,
-      "watch": 2,
-      "low": 0,
+      "summary": "Google ships Gemma 4 as the most capable open weight model family to date, Meta freezes all work with AI data vendor Mercor after a LiteLLM supply chain breach exposes training secrets, and the first MCP Dev Summit reveals authentication as the dominant unsolved challenge in agentic AI.",
       "items": [
         {
-          "score": 9,
+          "score": 8,
           "tag": "CRITICAL",
-          "category": "API Changes",
-          "headline": "Anthropic blocks Claude subscription use through third party tools like OpenClaw",
-          "description": "Starting April 4 at 12pm PT, Claude Pro and Max subscribers can no longer use their flat rate subscription to power external automation platforms and agent tools. Enforcement began with OpenClaw, the popular open source AI coding agent framework. Anthropic cited unsustainable compute and engineering strain from third party usage patterns. Boris Cherny, Head of Claude Code, stated that capacity is being prioritized for Anthropic's own products and API. Users who need third party integration must now enable extra usage billing or authenticate with a standard Claude API key.",
-          "action": "Audit any workflows that route Claude requests through third party agent tools using subscription credentials. Switch affected integrations to API key authentication. Evaluate whether extra usage billing or prepurchased bundles (up to 30% discount) are more cost effective for your volume.",
-          "clientPitch": "If you use Claude through any third party automation tool, that access was cut off April 4. We need to move those integrations to API key billing. Anthropic is offering a one time credit and bundle discounts to soften the transition.",
-          "useCase": "Any automation pipeline calling Claude through external agent frameworks rather than directly through the API. Custom tool chains that relied on subscription pass through for Claude access.",
+          "category": "Open Source Models",
+          "headline": "Google releases Gemma 4 open weight models with native multimodal and 256K context under Apache 2.0",
+          "description": "Google released Gemma 4 on April 2 in E2B, E4B, 31B, and 26B A4B sizes, all under the Apache 2.0 license. The 26B model uses a mixture of experts architecture with 128 experts totaling 3.8 billion active parameters, enabling offline inference on phones and edge devices. Native vision, audio, and 140 plus language support make this the most capable open weight family for agentic workflows at the edge.",
+          "action": "Evaluate Gemma 4 26B A4B as a drop in replacement for proprietary models in latency sensitive or offline agent pipelines. Test the 256K context window against your longest document processing workflows. Benchmark quality against Gemini 3.1 Flash Lite to decide where open weights can replace API calls.",
+          "clientPitch": "Google just open sourced a model family that runs completely offline on phones and edge devices with vision, audio, and 256K context. If you have any use cases where you need AI without cloud dependency or want to cut API costs, Gemma 4 is worth evaluating immediately.",
+          "useCase": "On device agent workflows, offline document processing, edge inference for IoT and mobile apps, cost reduction by replacing cloud API calls with local inference.",
           "tools": [
-            "Claude API",
-            "OpenClaw",
-            "n8n",
-            "Make.com"
+            "Gemma 4",
+            "Hugging Face",
+            "vLLM",
+            "NVIDIA Jetson",
+            "Android AICore"
           ],
-          "timeline": "April 4, 2026",
+          "timeline": "April 2, 2026",
           "confidence": "verified",
           "sourceTier": 1,
-          "sourceUrl": "https://venturebeat.com/technology/anthropic-cuts-off-the-ability-to-use-claude-subscriptions-with-openclaw-and",
-          "sourceName": "VentureBeat",
+          "sourceUrl": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+          "sourceName": "Google Blog",
           "sources": [
-            "https://venturebeat.com/technology/anthropic-cuts-off-the-ability-to-use-claude-subscriptions-with-openclaw-and",
-            "https://the-decoder.com/anthropic-cuts-off-third-party-tools-like-openclaw-for-claude-subscribers-citing-unsustainable-demand/",
-            "https://cybersecuritynews.com/claude-ends-openclaw-subscriptions/"
+            "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+            "https://deepmind.google/models/gemma/gemma-4/",
+            "https://www.theregister.com/2026/04/02/googles_gemma_4_open_weights/"
           ]
         },
         {
           "score": 8,
           "tag": "CRITICAL",
-          "category": "API Deprecations",
-          "headline": "Google deprecates Gemini 2.0 and 2.5 model families with June shutdown deadlines",
-          "description": "Google has set two deprecation deadlines for older Gemini models. Gemini 2.0 Flash and Gemini 2.0 Flash Lite shut down on June 1, 2026, with both models already restricted to existing customers only since March 6. Gemini 2.5 Flash and Gemini 2.5 Pro follow on June 17, 2026. The migration path for 2.0 models is Gemini 2.5 Flash Lite or Gemini 3.1 Flash Lite. For 2.5 models, Google recommends Gemini 3.1 Flash and Gemini 3.1 Pro respectively. Four model families retiring in a 17 day window.",
-          "action": "Inventory all Gemini API calls across automation workflows. Map each model reference to its replacement: 2.0 Flash to 3.1 Flash Lite, 2.5 Flash to 3.1 Flash, 2.5 Pro to 3.1 Pro. Test replacement models for output quality and pricing differences before the June 1 cutoff.",
-          "clientPitch": "Google is retiring four Gemini models in June. Any workflow calling these models will break. We need to audit and update all Gemini integrations within the next 8 weeks, starting with the 2.0 models that go first.",
-          "useCase": "All Make.com, n8n, and Zapier scenarios using Gemini API nodes. Custom integrations with hardcoded Gemini model IDs. Vertex AI pipelines referencing 2.0 or 2.5 model versions.",
+          "category": "Security",
+          "headline": "Mercor confirms LiteLLM supply chain breach as hackers claim 4TB of stolen AI training data",
+          "description": "AI data vendor Mercor confirmed it was breached through a supply chain attack on the open source LiteLLM library after the TeamPCP hacking group published two malicious PyPI packages for roughly 40 minutes on March 27. Lapsus$ extortion crew claims it stole 4TB including 939GB of Mercor source code and offered the data for sale. Mercor supplies training data to Anthropic, OpenAI, and Meta, raising concerns about exposure of proprietary AI project details.",
+          "action": "Audit any production systems that installed LiteLLM versions 1.82.7 or 1.82.8 from PyPI during the March 27 window. Rotate all API keys and credentials that may have been exposed through LiteLLM proxy configurations. Review your dependency pinning and lockfile practices to prevent similar supply chain attacks.",
+          "clientPitch": "A 40 minute window of malicious code in a popular AI library may have compromised training data for the biggest AI labs. If any of your systems use LiteLLM, we need to verify you were not affected and rotate credentials as a precaution.",
+          "useCase": "Any system using LiteLLM as an AI gateway or proxy. Organizations that share proprietary data with third party AI training vendors. Supply chain security for Python AI dependencies.",
           "tools": [
-            "Gemini API",
-            "Vertex AI",
-            "Make.com",
-            "n8n",
-            "Zapier"
+            "LiteLLM",
+            "PyPI",
+            "Mercor",
+            "pip"
           ],
-          "timeline": "June 1 and June 17, 2026",
+          "timeline": "March 27, 2026",
           "confidence": "verified",
           "sourceTier": 1,
-          "sourceUrl": "https://ai.google.dev/gemini-api/docs/deprecations",
-          "sourceName": "Google AI Developers",
+          "sourceUrl": "https://techcrunch.com/2026/03/31/mercor-says-it-was-hit-by-cyberattack-tied-to-compromise-of-open-source-litellm-project/",
+          "sourceName": "TechCrunch",
           "sources": [
-            "https://ai.google.dev/gemini-api/docs/deprecations",
-            "https://discuss.ai.google.dev/t/clarification-on-stable-replacement-models-for-gemini-2-5-flash-and-gemini-2-5-pro-before-june-2026-deprecation/130009",
-            "https://discuss.ai.google.dev/t/gemini-2-0-flash-discontinuation-date/131389"
+            "https://techcrunch.com/2026/03/31/mercor-says-it-was-hit-by-cyberattack-tied-to-compromise-of-open-source-litellm-project/",
+            "https://fortune.com/2026/04/02/mercor-ai-startup-security-incident-10-billion/",
+            "https://hackread.com/ai-firm-mercor-breach-hackers-4tb-data/"
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Security",
+          "headline": "Meta pauses all Mercor data contracts indefinitely after breach puts AI training secrets at risk",
+          "description": "Meta froze all work with data vendor Mercor on April 4 after the LiteLLM supply chain breach raised concerns that proprietary AI training datasets and project details were compromised. The pause is indefinite while Meta investigates the scope of exposure. Mercor's client list includes Anthropic and OpenAI, making this one of the widest reaching AI supply chain incidents to date.",
+          "action": "If your organization shares training data or model details with any third party vendor, review your data sharing agreements for breach notification requirements. Assess whether any proprietary datasets routed through Mercor may have been exposed. Consider implementing data compartmentalization for third party training relationships.",
+          "clientPitch": "Meta just froze its relationship with a major AI data vendor after a breach. If you work with external partners on AI training data, this is a wake up call to audit your supply chain and data sharing practices before a similar incident hits closer to home.",
+          "useCase": "Organizations outsourcing AI training data collection or annotation. Companies sharing proprietary datasets with third party vendors. AI supply chain risk management.",
+          "tools": [
+            "Mercor",
+            "LiteLLM"
+          ],
+          "timeline": "April 4, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://databreaches.net/2026/04/04/meta-pauses-work-with-mercor-after-data-breach-puts-ai-industry-secrets-at-risk/",
+          "sourceName": "DataBreaches.net",
+          "sources": [
+            "https://databreaches.net/2026/04/04/meta-pauses-work-with-mercor-after-data-breach-puts-ai-industry-secrets-at-risk/",
+            "https://thenextweb.com/news/meta-mercor-breach-ai-training-secrets-risk",
+            "https://themeridiem.com/security/2026/4/3/meta-pauses-mercor-as-data-breach-exposes-ai-training-secrets"
           ]
         },
         {
           "score": 7,
           "tag": "WATCH",
-          "category": "API Deprecations",
-          "headline": "OpenAI Assistants API shuts down August 26 with mandatory migration to Responses API",
-          "description": "OpenAI confirmed the Assistants API beta will be fully sunset on August 26, 2026. The Assistants API, which provided managed threads, file handling, and tool execution for building AI agents, is being replaced by the Responses API. The Responses API offers better performance, native support for deep research, MCP integration, and computer use. Azure OpenAI Assistants API follows the same retirement date. OpenAI has published a migration guide with step by step instructions for moving to the Responses API.",
-          "action": "Identify any production systems built on the Assistants API. Begin migration planning using OpenAI's published migration guide. The Responses API requires a different architecture: no more persistent threads, so state management moves to your application layer.",
-          "clientPitch": "If any of your AI workflows use OpenAI's Assistants API for managed conversations or file processing, those will stop working August 26. The replacement Responses API is more flexible but requires architectural changes. We should start migration now to avoid last minute pressure.",
-          "useCase": "Customer support bots built on Assistants API threads. Document processing pipelines using Assistants file handling. Any agent workflow relying on OpenAI managed conversation state.",
+          "category": "AI Research",
+          "headline": "Google TurboQuant achieves 6x KV cache compression at zero accuracy loss for LLM inference",
+          "description": "Google presented TurboQuant at ICLR 2026, a two step algorithm combining PolarQuant vector rotation and Quantized Johnson Lindenstrauss compression that reduces KV cache memory by 6x with no accuracy degradation. The method quantizes KV cache to 3 bits without fine tuning and actually speeds up inference runtime. Open source implementations for vLLM and llama.cpp are already available.",
+          "action": "Test TurboQuant integration with your self hosted LLM deployments to measure real world memory savings and throughput improvements. Evaluate whether the 6x memory reduction allows you to serve longer contexts or more concurrent users on existing hardware. Monitor vLLM and llama.cpp repos for production ready implementations.",
+          "clientPitch": "Google published a technique that cuts LLM memory use by 6x with zero quality loss. If you self host any models, this could dramatically reduce your infrastructure costs or let you serve much longer documents on the same hardware.",
+          "useCase": "Self hosted LLM deployments with long context requirements. Cost optimization for GPU inference infrastructure. Enabling larger context windows on existing hardware.",
           "tools": [
-            "OpenAI API",
-            "Responses API",
-            "n8n",
-            "Make.com",
-            "Zapier"
+            "vLLM",
+            "llama.cpp",
+            "TurboQuant",
+            "Triton"
           ],
-          "timeline": "August 26, 2026",
+          "timeline": "March 25, 2026",
           "confidence": "verified",
           "sourceTier": 1,
-          "sourceUrl": "https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666",
-          "sourceName": "OpenAI Developer Community",
+          "sourceUrl": "https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/",
+          "sourceName": "Google Research",
           "sources": [
-            "https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666",
-            "https://developers.openai.com/api/docs/deprecations",
-            "https://developers.openai.com/api/docs/assistants/migration"
+            "https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/",
+            "https://techcrunch.com/2026/03/25/google-turboquant-ai-memory-compression-silicon-valley-pied-piper/",
+            "https://www.trendforce.com/news/2026/03/26/news-decoding-googles-turboquant-6x-kv-cache-cut-headwind-for-memory-players/"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "AI Infrastructure",
+          "headline": "Meta ships KernelEvolve agentic system that autonomously optimizes AI inference kernels in production",
+          "description": "Meta published details on KernelEvolve, an agentic AI system that autonomously generates and optimizes production grade Triton kernels for NVIDIA GPUs, AMD GPUs, and Meta's custom MTIA silicon. The system delivers 1.25x to 17x speedups across production use cases and achieves 100% pass rate on all 250 KernelBench problems. It operates continuously in Meta's infrastructure, optimizing kernels for hundreds of models serving billions of users daily.",
+          "action": "Review Meta's KernelEvolve paper for techniques applicable to your own GPU kernel optimization pipelines. Evaluate whether agentic approaches to kernel tuning could reduce your inference costs on heterogeneous hardware. Watch for open source releases of the KernelBench evaluation suite.",
+          "clientPitch": "Meta built an AI agent that optimizes GPU code faster than human engineers and runs continuously in production. This signals a shift toward AI systems that autonomously improve their own infrastructure, which could reshape how companies manage AI compute costs.",
+          "useCase": "GPU kernel optimization for inference workloads. Heterogeneous hardware management across NVIDIA, AMD, and custom accelerators. Automated infrastructure performance tuning.",
+          "tools": [
+            "KernelEvolve",
+            "Triton",
+            "MTIA",
+            "NVIDIA GPUs",
+            "AMD GPUs"
+          ],
+          "timeline": "April 2, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure/",
+          "sourceName": "Meta Engineering",
+          "sources": [
+            "https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure/",
+            "https://arxiv.org/html/2512.23236v1"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "AI Standards",
+          "headline": "MCP Dev Summit concludes in New York with authentication as dominant unsolved challenge for agentic AI",
+          "description": "The first MCP Dev Summit drew over 95 sessions in New York on April 2 to 3 under the Linux Foundation's Agentic AI Foundation. Six dedicated sessions on MCP authentication signaled it as the top unsolved problem in the protocol ecosystem. Platinum members backing the foundation include AWS, Google, Microsoft, Anthropic, Block, Bloomberg, Cloudflare, and OpenAI.",
+          "action": "Review the MCP Dev Summit session recordings when published, particularly the authentication sessions. If you are building MCP integrations, defer production auth implementations until the official spec stabilizes. Track the Agentic AI Foundation's conformance testing work to future proof your MCP tooling.",
+          "clientPitch": "The first major conference for the protocol that connects AI agents to tools just happened, and every big tech company was there. Authentication is the biggest remaining gap. If you are building agent workflows, the standards being set now will shape how your tools connect to AI for years.",
+          "useCase": "Organizations building MCP server integrations. Teams designing agent tool ecosystems. Companies evaluating agentic AI architecture standards.",
+          "tools": [
+            "MCP",
+            "Agentic AI Foundation",
+            "Claude Code",
+            "OpenAI Agents SDK"
+          ],
+          "timeline": "April 2 to 3, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://events.linuxfoundation.org/mcp-dev-summit-north-america/",
+          "sourceName": "Linux Foundation Events",
+          "sources": [
+            "https://events.linuxfoundation.org/mcp-dev-summit-north-america/",
+            "https://www.linuxfoundation.org/press/agentic-ai-foundation-unveils-mcp-dev-summit-north-america-2026-schedule",
+            "https://github.blog/open-source/maintainers/mcp-joins-the-linux-foundation-what-this-means-for-developers-building-the-next-era-of-ai-tools-and-agents/"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Model Releases",
+          "headline": "Anthropic confirms Claude Mythos in early access testing after leaked blog post reveals step change in capabilities",
+          "description": "Anthropic acknowledged that its upcoming Claude Mythos model is being tested with a small group of early access customers focused on cybersecurity defense. A CMS configuration error exposed a draft blog post describing Mythos as dramatically outscoring Claude Opus 4.6 on coding, academic reasoning, and cybersecurity benchmarks. The model introduces a new Capybara tier above Opus, with no public API, pricing, or release date confirmed.",
+          "action": "Monitor Anthropic announcements for Mythos general availability and API pricing. Begin planning budget scenarios for a new tier above Opus pricing. Evaluate whether early access eligibility applies to your organization, particularly if you operate in cybersecurity.",
+          "clientPitch": "Anthropic accidentally confirmed its next generation model is a major leap beyond current Claude Opus. No public release date yet, but early access customers are already testing it. If cybersecurity or advanced reasoning is core to your workflows, this is worth watching closely.",
+          "useCase": "Enterprise cybersecurity analysis and threat detection. Complex multi step coding workflows. Academic research requiring frontier reasoning capabilities.",
+          "tools": [
+            "Claude API",
+            "Claude Mythos",
+            "Capybara"
+          ],
+          "timeline": "Q2 2026",
+          "confidence": "speculative",
+          "sourceTier": 1,
+          "sourceUrl": "https://fortune.com/2026/03/26/anthropic-says-testing-mythos-powerful-new-ai-model-after-data-leak-reveals-its-existence-step-change-in-capabilities/",
+          "sourceName": "Fortune",
+          "sources": [
+            "https://fortune.com/2026/03/26/anthropic-says-testing-mythos-powerful-new-ai-model-after-data-leak-reveals-its-existence-step-change-in-capabilities/",
+            "https://wavespeed.ai/blog/posts/what-is-claude-mythos/",
+            "https://dataconomy.com/2026/04/02/anthropic-tests-claude-mythos-as-its-most-powerful-ai-model/"
           ]
         },
         {
           "score": 6,
           "tag": "WATCH",
-          "category": "Open Source Models",
-          "headline": "Claw Code ships open source AI coding agent framework as Claude Code alternative",
-          "description": "Claw Code, a clean room reimplementation of the Claude Code agent architecture, launched publicly on April 2 and reached 123,000 GitHub stars within days. Built in Python with a Rust port in progress, it provides a fully open source agent harness connecting LLMs to tools, file systems, and task workflows. The project addresses the gap between increasingly capable models and the proprietary control layers that connect them to developer environments. It supports any LLM backend and runs entirely locally.",
-          "action": "Evaluate Claw Code as an open source alternative for AI assisted development workflows, particularly for teams that need full control over the agent harness layer. The model agnostic design means it can work with self hosted models like Gemma 4.",
-          "clientPitch": "A fully open source AI coding agent that works with any model and runs locally. Useful for teams that need AI assisted development without sending code to external services, or for building custom agent tooling on top of a proven architecture.",
-          "useCase": "Self hosted AI coding assistance for teams with data sensitivity requirements. Custom agent harness development. Local AI development workflows paired with open source models.",
+          "category": "AI Infrastructure",
+          "headline": "Meta reveals four MTIA custom AI chip generations on six month cadence to reduce Nvidia dependency",
+          "description": "Meta disclosed MTIA 300, 400, 450, and 500 custom silicon targeting AI inference workloads, with MTIA 300 already in production for ranking and recommendations. The 400 is in lab testing while the 450 and 500 target mass deployment in 2027. Meta is releasing new chip generations every six months using modular designs that drop into existing rack infrastructure.",
+          "action": "Track Meta's MTIA deployment timeline if you run workloads on Meta infrastructure or partner platforms. Assess whether the shift toward custom inference silicon will affect GPU pricing and availability from Nvidia. Consider the implications for your own build vs. buy decisions on AI accelerators.",
+          "clientPitch": "Meta is building its own AI chips and deploying new generations every six months to cut its reliance on Nvidia. This could reshape the GPU supply market and change pricing dynamics for anyone running large scale AI inference.",
+          "useCase": "Organizations planning GPU procurement for AI workloads. Companies evaluating custom silicon vs. commodity GPU strategies. Infrastructure teams monitoring AI chip market dynamics.",
           "tools": [
-            "Claw Code",
-            "Gemma 4",
-            "Ollama",
-            "vLLM"
+            "MTIA",
+            "NVIDIA GPUs",
+            "PyTorch"
           ],
-          "timeline": "Available now",
+          "timeline": "2026 to 2027",
           "confidence": "verified",
-          "sourceTier": 2,
-          "sourceUrl": "https://www.24-7pressrelease.com/press-release/533389/claw-code-launches-open-source-ai-coding-agent-framework-with-72000-github-stars-in-first-days",
-          "sourceName": "24-7 Press Release",
+          "sourceTier": 1,
+          "sourceUrl": "https://about.fb.com/news/2026/03/expanding-metas-custom-silicon-to-power-our-ai-workloads/",
+          "sourceName": "Meta Newsroom",
           "sources": [
-            "https://www.24-7pressrelease.com/press-release/533389/claw-code-launches-open-source-ai-coding-agent-framework-with-72000-github-stars-in-first-days",
-            "https://claw-code.codes/",
-            "https://toolhunter.cc/tools/ultraworkers-claw-code"
+            "https://about.fb.com/news/2026/03/expanding-metas-custom-silicon-to-power-our-ai-workloads/",
+            "https://www.tomshardware.com/tech-industry/semiconductors/meta-reveals-four-new-mtia-chips-built-for-ai-inference",
+            "https://siliconangle.com/2026/03/11/meta-debuts-internally-developed-ai-chips-inference-workloads/"
           ]
         }
-      ]
+      ],
+      "totalScanned": 8,
+      "relevant": 8,
+      "critical": 3,
+      "watch": 5,
+      "low": 0
     }
   }
 }
