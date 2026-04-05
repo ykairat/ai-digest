@@ -82,7 +82,7 @@ function WeeklySummary({ digests, dates, currentDate, onNavigate }) {
 
   return (
     <div className="weekly">
-      <div className="wk-label">This week's biggest stories</div>
+      <div className="wk-label">Biggest stories from the last 7 days</div>
       {topItems.map((item, i) => <div key={i} className="wk-item wk-link" onClick={() => onNavigate(item.dateKey, item.headline)}>{item.headline}</div>)}
     </div>
   )
