@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-05T10:00+06:00",
+  "lastUpdated": "2026-04-06T10:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://docs.anthropic.com/en/release-notes/overview returned 403 on 2026-04-03. Use WebSearch as fallback.",
@@ -38,6 +38,9 @@
     "2026-04-05: 4 items (2 CRITICAL, 2 WATCH). Anthropic third party tool cutoff (immediate), Gemini 2.0/2.5 June deprecation wave, OpenAI Assistants API August sunset, Claw Code open source launch.",
     "2026-04-05: All 6 primary WebFetch sources still return 403. llm-stats.com and devflokers.com also return 403.",
     "2026-04-05: Heavy deprecation awareness day. Three major API providers (Anthropic, Google, OpenAI) all have active or approaching retirement deadlines. Consider a consolidated deadline tracker item in future digests.",
-    "2026-04-05: Anthropic third party tool cutoff is the biggest immediate action item. Affects anyone routing Claude through non-Anthropic agent tools using subscription credentials."
+    "2026-04-05: Anthropic third party tool cutoff is the biggest immediate action item. Affects anyone routing Claude through non-Anthropic agent tools using subscription credentials.",
+    "2026-04-06: 4 items (0 CRITICAL, 3 WATCH, 1 LOW). OpenAI Codex pay-as-you-go pricing, Gemini Deep Research Agent API, OpenAI Sora two-stage shutdown, Gemini TTS models preview.",
+    "2026-04-06: All 6 primary WebFetch sources still return 403. llm-stats.com also returns 403. WebSearch remains the only viable approach.",
+    "2026-04-06: Quieter news day. Most major items from the week (Anthropic tool cutoff, Gemini deprecation wave, Claude Code leak) already covered in previous digests. Focused on pricing changes and new API capabilities not yet reported."
   ]
 }
