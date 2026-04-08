@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-08",
     "2026-04-07",
     "2026-04-06",
     "2026-04-05",
@@ -1305,6 +1306,88 @@
           ]
         }
       ]
+    },
+    "2026-04-08": {
+      "dateKey": "2026-04-08",
+      "date": "April 8, 2026",
+      "summary": "Google delivers Gemini 3.1 Ultra with the largest production context window at two million tokens, OpenAI begins pulling six legacy GPT-5 models from Codex ahead of an April 14 hard cutoff, and n8n 2.16.0 opens its data tables to AI agents through MCP.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "APIs and Platforms",
+          "headline": "Google ships Gemini 3.1 Ultra to developers with two million token context window",
+          "description": "Google DeepMind released Gemini 3.1 Ultra across the Gemini API, AI Studio, and Vertex AI with a two million token context window and a 94.3% score on GPQA Diamond. The model supports native multimodal reasoning across text, image, audio, and video inputs. It is the largest production context window currently available from any major API provider.",
+          "action": "Test Gemini 3.1 Ultra for workloads requiring context beyond one million tokens and benchmark against current model selections for quality and cost.",
+          "clientPitch": "",
+          "useCase": "Doubles the usable context ceiling for production pipelines. Relevant for any workflow processing long documents, large codebases, or multi-source analysis that currently requires chunking or summarization to fit within smaller context windows.",
+          "tools": [
+            "Gemini API",
+            "Vertex AI",
+            "Google AI Studio"
+          ],
+          "timeline": "April 5, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://ai.google.dev/gemini-api/docs/changelog",
+          "sourceName": "Google AI for Developers",
+          "sources": [
+            "https://ai.google.dev/gemini-api/docs/changelog",
+            "https://smartchunks.com/google-gemini-3-1-ultra-gpqa-diamond-benchmark/"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "APIs and Platforms",
+          "headline": "OpenAI removes six legacy GPT-5 and Codex models from picker ahead of April 14 full cutoff",
+          "description": "Starting April 7, the Codex model picker no longer shows gpt-5, gpt-5.1, gpt-5.1-codex, gpt-5.1-codex-mini, gpt-5.1-codex-max, and gpt-5.2-codex. Full removal from Codex for ChatGPT sign-in is scheduled for April 14. Remaining model options are gpt-5.4, gpt-5.4-mini, gpt-5.3-codex, and gpt-5.2.",
+          "action": "",
+          "clientPitch": "OpenAI is retiring six older model versions from Codex with one week notice, requiring teams to verify and update any pinned model references before April 14.",
+          "useCase": "Any orchestration, automation, or API call referencing these six model IDs will need updating. Check n8n, Make, Zapier, and custom integrations for hardcoded model strings before the April 14 deadline.",
+          "tools": [
+            "OpenAI API",
+            "Codex"
+          ],
+          "timeline": "April 14, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://developers.openai.com/codex/changelog",
+          "sourceName": "OpenAI Developers",
+          "sources": [
+            "https://developers.openai.com/codex/changelog",
+            "https://developers.openai.com/api/docs/deprecations"
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Workflow Automation",
+          "headline": "n8n 2.16.0 ships Data Table MCP tool with Notion OAuth and Anthropic node fixes",
+          "description": "n8n version 2.16.0, released as a pre-release on April 7, introduces a Data Table MCP tool that exposes workflow data tables to MCP compatible agents. The release also adds OAuth support for the Notion node and fixes bugs in the Anthropic and Chat Trigger nodes. The stable branch remains at version 2.15.0.",
+          "action": "",
+          "clientPitch": "n8n now lets AI agents access workflow data tables directly through MCP, turning the automation platform into both a tool executor and a live data source for intelligent agents.",
+          "useCase": "Extends the MCP integration from v1.88 by making n8n a data provider, not just a tool provider. AI agents can now query structured data stored in n8n without building custom API endpoints, useful for agentic workflows that need lookup tables or configuration data.",
+          "tools": [
+            "n8n",
+            "MCP",
+            "Notion"
+          ],
+          "timeline": "April 7, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/n8n-io/n8n/releases",
+          "sourceName": "n8n GitHub Releases",
+          "sources": [
+            "https://github.com/n8n-io/n8n/releases"
+          ]
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 1,
+      "watch": 2,
+      "low": 0
     }
   }
 }
