@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-09",
     "2026-04-08",
     "2026-04-07",
     "2026-04-06",
@@ -1465,6 +1466,138 @@
           ]
         }
       ]
+    },
+    "2026-04-09": {
+      "dateKey": "2026-04-09",
+      "date": "April 9, 2026",
+      "summary": "Anthropic launches Claude Managed Agents as a fully managed autonomous agent harness, and Meta debuts Muse Spark, its first proprietary frontier model built by Meta Superintelligence Labs.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "API Changes",
+          "headline": "Anthropic launches Claude Managed Agents in public beta with sandboxed containers and SSE streaming",
+          "description": "Claude Managed Agents is a fully managed agent harness for running Claude as an autonomous agent with secure sandboxing, built in tools, and server sent event streaming. Developers create agents, configure containers, and run sessions through the API using the managed-agents-2026-04-01 beta header. The system handles tool execution, environment isolation, and state management natively.",
+          "action": "Review the Managed Agents API documentation at platform.claude.com. Evaluate whether current custom agent orchestration (LangChain, CrewAI, custom loops) can be replaced with this managed approach. Test with the managed-agents-2026-04-01 beta header.",
+          "clientPitch": "Anthropic now offers a fully managed way to run autonomous AI agents with built in security and tooling, removing the need to build and maintain your own agent infrastructure.",
+          "useCase": "Replaces custom agent orchestration stacks for Claude based workflows. Secure sandboxing means production agent deployment without building container infrastructure. SSE streaming enables real time agent progress monitoring in client applications.",
+          "tools": [
+            "Claude API",
+            "Managed Agents API",
+            "Claude Code"
+          ],
+          "timeline": "April 8, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+          "sourceName": "Anthropic Platform Release Notes",
+          "sources": [
+            "https://platform.claude.com/docs/en/release-notes/overview",
+            "https://platform.claude.com/docs/en/managed-agents/overview"
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Model Releases",
+          "headline": "Meta debuts Muse Spark, its first proprietary frontier model from Meta Superintelligence Labs",
+          "description": "Muse Spark is the first model from Meta Superintelligence Labs, led by Alexandr Wang. It accepts voice, text, and image inputs with text only output, and is reportedly competitive on multimodal perception, reasoning, health, and agentic benchmarks. The model is proprietary with a private API preview available to select partners only.",
+          "action": "Monitor Meta AI developer channels for public API availability. If you build on WhatsApp, Instagram, or Messenger, prepare for Muse Spark integration points as it rolls out across Meta surfaces in coming weeks.",
+          "clientPitch": "Meta just launched its most capable AI model, which will power the Meta AI assistant across Facebook, Instagram, WhatsApp, and Ray Ban glasses, with a paid API planned for developers.",
+          "useCase": "Meta is signaling a shift from open source to proprietary for its frontier models. Anyone building on Meta platforms (WhatsApp, Instagram, Messenger) should expect Muse Spark as the default model behind Meta AI interactions. The private API preview indicates a future paid API tier competing directly with OpenAI and Anthropic.",
+          "tools": [
+            "Meta AI",
+            "WhatsApp",
+            "Instagram",
+            "Messenger"
+          ],
+          "timeline": "April 8, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html",
+          "sourceName": "CNBC",
+          "sources": [
+            "https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html",
+            "https://techcrunch.com/2026/04/08/meta-debuts-the-muse-spark-model-in-a-ground-up-overhaul-of-its-ai/",
+            "https://ai.meta.com/blog/introducing-muse-spark-msl/"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Developer Tools",
+          "headline": "Anthropic ships ant CLI for direct Claude API interaction and YAML based resource versioning",
+          "description": "The ant CLI is a new command line client for the Claude API that enables faster API interaction, native integration with Claude Code, and versioning of API resources in YAML files. It provides a terminal native workflow for managing prompts, agents, and configurations as code.",
+          "action": "",
+          "clientPitch": "Anthropic released a command line tool that lets developers manage Claude API resources as version controlled YAML files, bringing infrastructure as code practices to AI prompt and agent management.",
+          "useCase": "Teams managing Claude prompts and agent configurations across environments can now version control API resources in YAML. Native Claude Code integration means the CLI slots directly into existing developer workflows. Useful for CI/CD pipelines that deploy or update Claude based systems.",
+          "tools": [
+            "ant CLI",
+            "Claude API",
+            "Claude Code"
+          ],
+          "timeline": "April 8, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+          "sourceName": "Anthropic Platform Release Notes",
+          "sources": [
+            "https://platform.claude.com/docs/en/release-notes/overview"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "API Changes",
+          "headline": "Claude Messages API launches on Amazon Bedrock as research preview with first party request shape",
+          "description": "The Claude Messages API is now available on Amazon Bedrock at the /anthropic/v1/messages endpoint, using the same request shape as the first party Claude API. It runs on AWS managed infrastructure with zero operator access. Available in us-east-1 by invitation.",
+          "action": "",
+          "clientPitch": "Enterprise teams using AWS can now call the Claude API through Bedrock using the exact same code as the direct Anthropic endpoint, eliminating the need to maintain separate integration paths.",
+          "useCase": "Removes the code divergence between direct Claude API and Bedrock integrations. Teams can now use a single SDK and request format across both deployment targets. Zero operator access addresses enterprise data governance requirements for regulated industries.",
+          "tools": [
+            "Claude API",
+            "Amazon Bedrock",
+            "AWS"
+          ],
+          "timeline": "April 7, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+          "sourceName": "Anthropic Platform Release Notes",
+          "sources": [
+            "https://platform.claude.com/docs/en/release-notes/overview"
+          ]
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "Pricing",
+          "headline": "OpenAI Codex crosses 3 million weekly users as Altman resets all usage limits",
+          "description": "OpenAI CEO Sam Altman announced that Codex reached 3 million weekly users, up one million in under a month. To mark the milestone, OpenAI reset usage quotas for all developers and committed to repeating the reset at every additional million users until it reaches 10 million.",
+          "action": "",
+          "clientPitch": "",
+          "useCase": "The rolling usage resets effectively increase the Codex free tier allocation for active users during this growth phase. Teams evaluating Codex for daily development workflows get a fresh quota to test against their actual usage patterns.",
+          "tools": [
+            "OpenAI Codex",
+            "ChatGPT Business",
+            "ChatGPT Enterprise"
+          ],
+          "timeline": "April 8, 2026",
+          "confidence": "verified",
+          "sourceTier": 2,
+          "sourceUrl": "https://www.businesstoday.in/technology/story/openai-codex-celebrates-3-million-weekly-users-ceo-sam-altman-resets-usage-limits-524717-2026-04-08",
+          "sourceName": "Business Today",
+          "sources": [
+            "https://www.businesstoday.in/technology/story/openai-codex-celebrates-3-million-weekly-users-ceo-sam-altman-resets-usage-limits-524717-2026-04-08",
+            "https://letsdatascience.com/news/sam-altman-resets-openai-codex-limits-74ec5754"
+          ]
+        }
+      ],
+      "totalScanned": 5,
+      "relevant": 4,
+      "critical": 2,
+      "watch": 2,
+      "low": 1
     }
   }
 }
