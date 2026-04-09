@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-04-08T22:00+06:00",
+  "lastUpdated": "2026-04-09T12:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
-    "anthropic_releases": "https://docs.anthropic.com/en/release-notes/overview returned 403 on 2026-04-03. Use WebSearch as fallback.",
+    "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
     "gemini_changelog": "https://ai.google.dev/gemini-api/docs/changelog returned 403 on 2026-04-03. Use WebSearch as fallback.",
     "n8n_releases": "https://docs.n8n.io/release-notes/ returned 403 on 2026-04-03. Use WebSearch as fallback.",
     "zapier_updates": "https://community.zapier.com/product-updates returned 403 on 2026-04-03. Use WebSearch as fallback.",
@@ -59,6 +59,14 @@
     "2026-04-08 evening: Frontier Model Forum anti-distillation story (Bloomberg April 6, Japan Times April 7) is industry defining. OpenAI, Anthropic, Google cooperating on threat intelligence is unprecedented.",
     "2026-04-08 evening: Detached HEAD issue recurred again. 29 commits were stranded. Fixed by merging d816cbd into main before committing. Root cause: sessions start in detached HEAD state.",
     "2026-04-08 evening: GPT-5.4 mini/nano confirmed as March 17. Sora API expansion confirmed as March 12. Responses API Skills confirmed as February 11. Mistral Large 3 confirmed as December 2025. All excluded as stale.",
-    "2026-04-08 evening: No new Zapier, Make.com, or Airtable product updates found for April 7-8. Zapier latest documented updates are from February 2026."
+    "2026-04-08 evening: No new Zapier, Make.com, or Airtable product updates found for April 7-8. Zapier latest documented updates are from February 2026.",
+    "2026-04-09: 5 items (2 CRITICAL, 2 WATCH, 1 LOW). Claude Managed Agents public beta (CRITICAL), Meta Muse Spark proprietary model launch (CRITICAL), ant CLI launch, Claude Messages API on Bedrock research preview, OpenAI Codex 3M users milestone.",
+    "2026-04-09: platform.claude.com/docs/en/release-notes/overview is now fetchable via WebFetch. This is the best source for Anthropic API changes. Updated sourceNotes accordingly.",
+    "2026-04-09: All other 5 primary WebFetch sources still return 403. WebSearch remains the fallback for OpenAI, Google, n8n, Zapier.",
+    "2026-04-09: Claude Managed Agents is the biggest Anthropic platform launch since Agent Skills (October 2025). Fully managed agent harness with sandboxing, tools, and SSE streaming.",
+    "2026-04-09: Meta Muse Spark is proprietary, breaking Meta's open source tradition. Private API preview only for select partners. Signals Meta entering the paid API market.",
+    "2026-04-09: Detached HEAD issue recurred again. Fixed by fetching origin/main and resetting. Root cause remains: sessions start in detached HEAD state.",
+    "2026-04-09: No new Zapier, Make.com, or Airtable product updates found for April 8-9.",
+    "2026-04-09: Claude outage continued April 8 (Sonnet 4.6 errors 23:00-01:50 PT). Excluded per established precedent."
   ]
 }
