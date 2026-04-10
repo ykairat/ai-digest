@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-09T12:00+06:00",
+  "lastUpdated": "2026-04-10T12:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -67,6 +67,18 @@
     "2026-04-09: Meta Muse Spark is proprietary, breaking Meta's open source tradition. Private API preview only for select partners. Signals Meta entering the paid API market.",
     "2026-04-09: Detached HEAD issue recurred again. Fixed by fetching origin/main and resetting. Root cause remains: sessions start in detached HEAD state.",
     "2026-04-09: No new Zapier, Make.com, or Airtable product updates found for April 8-9.",
-    "2026-04-09: Claude outage continued April 8 (Sonnet 4.6 errors 23:00-01:50 PT). Excluded per established precedent."
+    "2026-04-09: Claude outage continued April 8 (Sonnet 4.6 errors 23:00-01:50 PT). Excluded per established precedent.",
+    "2026-04-10: 3 items (2 CRITICAL, 1 WATCH, 0 LOW). Anthropic advisor tool public beta (CRITICAL, Opus advisor paired with Sonnet/Haiku executor), Claude Cowork general availability with SCIM role based access plus OpenTelemetry (CRITICAL), Agentic Risk Standard paper from DeepMind Microsoft Columbia T54 Labs (WATCH).",
+    "2026-04-10: platform.claude.com/docs/en/release-notes/overview still fetchable via WebFetch. Confirmed Anthropic advisor tool from primary source. All 6 primary OpenAI/Google/n8n/Zapier/Make URLs still return 403.",
+    "2026-04-10: github.com/n8n-io/n8n/releases fetchable. April 9 release 1.123.30 was a minor env var change; April 8 1.123.29 was a bugfix only. Neither worth including.",
+    "2026-04-10: Verified GPT-5.4 rollout article dated April 9 but the underlying model shipped March 5 and mini/nano shipped March 17. Skipped as stale relabel.",
+    "2026-04-10: Microsoft Agent Framework 1.0 confirmed as April 2 to April 7, now outside the 48 hour window. Skipped.",
+    "2026-04-10: Voxtral TTS (Mistral) and Cohere Transcribe both confirmed as March 26. Stale, skipped.",
+    "2026-04-10: Microsoft 365 connector for Claude free tier rollout confirmed as April 3. Stale by 7 days, skipped.",
+    "2026-04-10: Anthropic Coefficient Bio acquisition (April 2 to 3) skipped as M&A plus outside the 48 hour window.",
+    "2026-04-10: Claude Cowork marketplace MCP connectors (Google Drive, Gmail, DocuSign, etc) were actually launched February 24. Today's announcement adds Zoom MCP connector plus the GA milestone. Described carefully to avoid rebadging stale connector list.",
+    "2026-04-10: Perplexity Billion Dollar Build (April 9) is a marketing competition, not an API or product capability change. Skipped per rules excluding strategy and marketing events.",
+    "2026-04-10: Anthropic advisor tool is the second meaningful Claude platform launch in two days (after Managed Agents on April 8). Clear pattern of Anthropic shipping agent infrastructure primitives this week.",
+    "2026-04-10: Agentic Risk Standard paper (Fortune April 8) is unusual: it is academic research but ships an open GitHub implementation, which meets the 'usable output' bar for inclusion."
   ]
 }
