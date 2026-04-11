@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-10T12:00+06:00",
+  "lastUpdated": "2026-04-11T12:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -79,6 +79,16 @@
     "2026-04-10: Claude Cowork marketplace MCP connectors (Google Drive, Gmail, DocuSign, etc) were actually launched February 24. Today's announcement adds Zoom MCP connector plus the GA milestone. Described carefully to avoid rebadging stale connector list.",
     "2026-04-10: Perplexity Billion Dollar Build (April 9) is a marketing competition, not an API or product capability change. Skipped per rules excluding strategy and marketing events.",
     "2026-04-10: Anthropic advisor tool is the second meaningful Claude platform launch in two days (after Managed Agents on April 8). Clear pattern of Anthropic shipping agent infrastructure primitives this week.",
-    "2026-04-10: Agentic Risk Standard paper (Fortune April 8) is unusual: it is academic research but ships an open GitHub implementation, which meets the 'usable output' bar for inclusion."
+    "2026-04-10: Agentic Risk Standard paper (Fortune April 8) is unusual: it is academic research but ships an open GitHub implementation, which meets the 'usable output' bar for inclusion.",
+    "2026-04-11: 4 items (1 CRITICAL, 3 WATCH, 0 LOW). OpenAI $100 ChatGPT Pro tier (CRITICAL, fills $20 to $200 gap, 5x Codex usage of Plus, 10x through May 31), OpenAI plans gated cybersecurity model via Trusted Access for Cyber (mirrors Anthropic Mythos restriction approach), Claude Code 2.1.101 with /team-onboarding command and OS CA cert trust, Alibaba Happy Horse text to video model topping Artificial Analysis leaderboard.",
+    "2026-04-11: platform.claude.com/docs/en/release-notes/overview still fetchable via WebFetch. Latest Anthropic API release notes entry remains April 9 (advisor tool), already covered yesterday.",
+    "2026-04-11: github.com/anthropics/claude-code/releases fetchable via WebFetch. Found v2.1.98 (April 9) and v2.1.100/v2.1.101 (April 10). v2.1.101 has the most user facing additions.",
+    "2026-04-11: github.com/n8n-io/n8n/releases fetchable. April 10 release 2.15.1 was a Google Drive pagination bugfix only. Skipped per minor bugfix precedent.",
+    "2026-04-11: Microsoft MAI-Transcribe-1, MAI-Voice-1, MAI-Image-2 confirmed as April 2 to 3. Stale, skipped.",
+    "2026-04-11: CoreWeave-Anthropic multi-year compute deal (April 10) skipped as infrastructure/business strategy event with no immediate API capability change.",
+    "2026-04-11: Claude mobile interactive apps with live charts on iOS/Android could not get a confirmed April 10-11 date. Skipped to avoid stale relabel.",
+    "2026-04-11: Pony.ai PonyWorld 2.0 (April 10) skipped as autonomous vehicles is in topicsLowInterest.",
+    "2026-04-11: GPT-5.3 Instant Mini ChatGPT fallback (April 10) is a consumer product change, not an API change. Skipped as too minor for builders.",
+    "2026-04-11: OpenAI Trusted Access for Cyber model is technically a strategy/planning announcement (Axios scoop, model not yet shipped) but included as the parallel to Mythos is industry defining and the program itself already exists with $10M committed credits."
   ]
 }
