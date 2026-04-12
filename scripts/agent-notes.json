@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-11T12:00+06:00",
+  "lastUpdated": "2026-04-12T12:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -89,6 +89,17 @@
     "2026-04-11: Claude mobile interactive apps with live charts on iOS/Android could not get a confirmed April 10-11 date. Skipped to avoid stale relabel.",
     "2026-04-11: Pony.ai PonyWorld 2.0 (April 10) skipped as autonomous vehicles is in topicsLowInterest.",
     "2026-04-11: GPT-5.3 Instant Mini ChatGPT fallback (April 10) is a consumer product change, not an API change. Skipped as too minor for builders.",
-    "2026-04-11: OpenAI Trusted Access for Cyber model is technically a strategy/planning announcement (Axios scoop, model not yet shipped) but included as the parallel to Mythos is industry defining and the program itself already exists with $10M committed credits."
+    "2026-04-11: OpenAI Trusted Access for Cyber model is technically a strategy/planning announcement (Axios scoop, model not yet shipped) but included as the parallel to Mythos is industry defining and the program itself already exists with $10M committed credits.",
+    "2026-04-12: 3 items (1 CRITICAL, 2 WATCH, 0 LOW). DeepSeek V4 late April release on Huawei Ascend chips with parallel Tencent Hunyuan 3.0 launch (CRITICAL, Liang Wenfeng internal communication scoop reported April 10), OpenAI Codex CLI 0.119/0.120 with Realtime voice v2 default and MCP outputSchema, GitHub Copilot CLI 1.0.22-1.0.24 retiring legacy .vscode/mcp.json and adding direct agent mode flags.",
+    "2026-04-12: Quiet news day. Anthropic platform.claude.com/docs release notes show April 9 advisor tool as latest entry (already covered April 10). github.com/anthropics/claude-code/releases shows no new versions since v2.1.101 on April 10 (already covered April 11). github.com/n8n-io/n8n/releases shows no new versions since 2.15.1 (already evaluated).",
+    "2026-04-12: github.com/openai/codex/releases fetchable. v0.119.0 (April 10) and v0.120.0 (April 11) bring meaningful Realtime V2 and MCP outputSchema changes worth a single combined item.",
+    "2026-04-12: github.com/github/copilot-cli/releases fetchable. v1.0.22 (April 9) deprecated .vscode/mcp.json migration; v1.0.23 and v1.0.24 (both April 10) added agent mode flags and hook field support. Combined into a single item with framing around the within-window v1.0.24 release.",
+    "2026-04-12: NPR April 11 Anthropic Mythos coverage and Bloomberg/Fortune April 10 Mythos cyber risk warnings are reframings of the April 7 Mythos Preview launch. Skipped per stale relabel precedent.",
+    "2026-04-12: xAI lawsuit against Colorado SB24-205 (filed April 9) is borderline outside the 48 hour window and is a litigation event without immediate API impact. Skipped.",
+    "2026-04-12: Anthropic government meeting (Powell, Bessent, bank CEOs huddling over Mythos cyber risks, this week) is policy/strategy event with no immediate API or capability change. Skipped.",
+    "2026-04-12: Tether QVAC SDK April 9 launch is a meaningful local-first AI framework but exceeds 48 hour window relative to today. Skipped to avoid stale relabel.",
+    "2026-04-12: Sarvam AI $350M funding (April 11) is excluded per funding rule. Microsoft India $17.5B commitment is broader infrastructure context, not a product change.",
+    "2026-04-12: ElevenLabs ElevenMusic iOS app (early April) is consumer music product, in topicsLowInterest. Skipped.",
+    "2026-04-12: Sources for Codex CLI dates conflict slightly across UI surfaces. Confirmed v0.120.0 as April 11 via Codex_Changelog tweet announcement and primary GitHub release page."
   ]
 }
