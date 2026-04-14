@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-13T12:00+06:00",
+  "lastUpdated": "2026-04-14T12:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -108,6 +108,19 @@
     "2026-04-13: Codex CLI 0.121.0-alpha.1 and alpha.2 (both April 11) bring Realtime V2 and MCP enhancements but are pre-release alphas. Skipped per consistent pre-release exclusion precedent. Will revisit when 0.121.0 stable lands.",
     "2026-04-13: Cursor 3 (Agents Window, Design Mode) confirmed as April 2. Outside 48 hour window and outside even the wider Axios precedent buffer. Skipped.",
     "2026-04-13: GitHub Copilot CLI no new releases April 11-13. Latest remains v1.0.24 from April 10, already covered yesterday.",
-    "2026-04-13: Detached HEAD recurred again (commits ee30a3a behind). Fixed by checking out main, fast-forwarding from the detached HEAD commit chain (4a2fc57..ee30a3a), then committing on top. Root cause: sessions still start in detached HEAD state."
+    "2026-04-13: Detached HEAD recurred again (commits ee30a3a behind). Fixed by checking out main, fast-forwarding from the detached HEAD commit chain (4a2fc57..ee30a3a), then committing on top. Root cause: sessions still start in detached HEAD state.",
+    "2026-04-14: 5 items (2 CRITICAL, 3 WATCH, 0 LOW). n8n 2.17.0 with AI Gateway support plus Alibaba Cloud Model Studio and Moonshot Kimi nodes (CRITICAL), GitHub Copilot CLI 1.0.25 with MCP registry guided install plus /env and /remote (CRITICAL), Claude Code 2.1.105 with PreCompact hook blocking and background plugin monitor manifest, Vercel AI Gateway team-wide Zero Data Retention switch with Qwen 3.6 Plus and GLM 5.1 added, Stanford HAI 2026 AI Index showing US-China model gap effectively closed at 2.7 points.",
+    "2026-04-14: platform.claude.com/docs/en/release-notes/overview still fetchable via WebFetch. Latest entry remains April 9 advisor tool, already covered. github.com/anthropics/claude-code/releases shows v2.1.105 on April 13 with very rich changelog (PreCompact blocking, monitors manifest, EnterWorktree path, /proactive alias, stalled stream timeout, /doctor f shortcut, MCP truncation prompts, dozens of fixes). v2.1.104 was a chore changelog update only.",
+    "2026-04-14: github.com/n8n-io/n8n/releases shows n8n@2.17.0 on April 13 (15:10 UTC) as Pre-release. Substantial features including AI Gateway support, Alibaba Cloud Model Studio, Moonshot Kimi, AI Builder workflow evaluation, MCP Client Tool Node prefixing, expression-based role mapping, ~50 bug fixes. Included as CRITICAL because it is the highest reader-priority topic and the AI Gateway support is a structural change.",
+    "2026-04-14: github.com/github/copilot-cli/releases shows v1.0.25 on April 13 (13:47 UTC) with MCP registry guided install, ACP MCP servers, /env and /remote commands, MCP retry, custom instruction file character preservation. Included as CRITICAL because MCP registry direct install is a structural workflow change.",
+    "2026-04-14: github.com/openai/codex/releases shows only 0.121.0-alpha.4 (April 13 15:34 UTC) and 0.121.0-alpha.6 (April 13 21:48 UTC) within window. Both pre-release alphas, skipped per established pre-release exclusion precedent.",
+    "2026-04-14: Vercel community weekly post 2026-04-13 confirmed via search results: Zero Data Retention team controls on AI Gateway, Qwen 3.6 Plus added, GLM 5.1 added, Claude Opus 4.6 Fast mode added, Workflow SDK custom class serialization, Chat SDK Liveblocks adapter. Combined into one platform update item.",
+    "2026-04-14: Stanford HAI 2026 AI Index released April 13. Borderline include as it is research, but the Index publishes industry-defining benchmark stats with usable charts and is annual (not raw research). Scored as WATCH (6) for awareness with action focused on multi-provider sourcing decisions.",
+    "2026-04-14: OpenAI legacy Codex model retirement (gpt-5, gpt-5.1, etc) effective April 14 was already covered in April 8 evening digest. Skipped to avoid duplication.",
+    "2026-04-14: Claude Mythos Preview availability in Amazon Bedrock dated April 7 launch with Bedrock weekly roundup recap on April 13. Skipped because the underlying availability was covered in April 8 (Messages API on Bedrock research preview) and again April 9. AWS Agent Registry preview was April 9, also stale.",
+    "2026-04-14: Anthropic compute deal with Google and Broadcom (April 6-7) skipped as M&A/infrastructure event without API capability change.",
+    "2026-04-14: Apple smart glasses (Bloomberg April 12) and Oracle Bloom Energy power deal (Bloomberg April 13) skipped as hardware/infrastructure not in scope.",
+    "2026-04-14: GPT-6 / OpenAI 'Spud' April 14 release rumor explicitly unconfirmed across multiple sources. Skipped as speculation without source dates.",
+    "2026-04-14: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge from detached HEAD commit (24ab9a8). Root cause persists: sessions still start in detached HEAD state. Working file scripts/new-digest.json was leftover from yesterday's run and was deleted before the fresh run."
   ]
 }
