@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-14",
     "2026-04-13",
     "2026-04-12",
     "2026-04-11",
@@ -1955,6 +1956,152 @@
             "https://github.com/anthropics/claude-code/releases",
             "https://x.com/ClaudeCodeLog/status/2043203801172066470",
             "https://code.claude.com/docs/en/changelog"
+          ]
+        }
+      ]
+    },
+    "2026-04-14": {
+      "dateKey": "2026-04-14",
+      "date": "April 14, 2026",
+      "summary": "**n8n 2.17.0 wires an AI Gateway, Alibaba Cloud Model Studio, and Moonshot Kimi into the workflow runtime, GitHub Copilot CLI 1.0.25 starts installing MCP servers straight from the registry with guided setup, Claude Code 2.1.105 lets PreCompact hooks block compaction and arms background plugin monitors, Vercel AI Gateway adds a one switch Zero Data Retention mode, and Stanford HAI publishes the 2026 AI Index showing China has erased the US model lead.**",
+      "totalScanned": 5,
+      "relevant": 5,
+      "critical": 2,
+      "watch": 3,
+      "low": 0,
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Platform Update",
+          "headline": "n8n 2.17.0 adds AI Gateway routing, Alibaba Model Studio node, and Moonshot Kimi chat model",
+          "description": "n8n shipped 2.17.0 on April 13 with AI Gateway support across the AI nodes, a top up flow for gateway credits, and brand new built in nodes for Alibaba Cloud Model Studio and Moonshot Kimi covering both chat and sub agent use. The MCP Client Tool Node now prefixes tool names with their server name, the AI Builder gained a workflow evaluation framework with LLM mock execution and structured sub agent briefings, and operators get expression based role mapping with drag to reorder rules plus configurable VM expression bridge timeout and memory limits. About fifty bug fixes round out the release across AWS DynamoDB auto parsing, Box pagination, Google Drive, HTTP Request, Microsoft Teams, Oracle, and core webhook cleanup.",
+          "action": "Upgrade self hosted n8n to 2.17.0 in a staging instance and point the AI nodes at your existing AI Gateway credentials before rolling to production. Pilot the Alibaba Model Studio and Moonshot Kimi nodes on one workflow each to compare cost and latency against your current OpenAI or Anthropic routes. Audit any custom MCP tool naming since Tool Node names now include the server prefix.",
+          "clientPitch": "n8n now treats AI as a first class part of the runtime. You can route every AI call through one gateway, swap Alibaba and Moonshot models in one click, evaluate AI builder workflows with mock LLMs, and provision roles with expressions instead of console clicks.",
+          "useCase": "Multi provider AI workflow orchestration, cost arbitrage between Western and Chinese model APIs inside a single automation, MCP tool routing in a shared n8n instance, and any workflow where the AI builder needs to be tested before shipping.",
+          "tools": [
+            "n8n",
+            "n8n AI Builder",
+            "AI Gateway",
+            "Alibaba Cloud Model Studio",
+            "Moonshot Kimi",
+            "MCP Client Tool Node",
+            "AWS DynamoDB"
+          ],
+          "timeline": "April 13, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/n8n-io/n8n/releases",
+          "sourceName": "GitHub",
+          "sources": [
+            "https://github.com/n8n-io/n8n/releases",
+            "https://docs.n8n.io/release-notes/",
+            "https://blog.n8n.io/"
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI 1.0.25 installs MCP servers from the registry with guided configuration",
+          "description": "GitHub shipped Copilot CLI 1.0.25 on April 13 with first class MCP registry support: builders can now browse and install MCP servers from the GitHub MCP registry directly in the terminal with a guided setup wizard, and ACP clients can supply their own stdio, HTTP, or SSE MCP servers when starting or loading sessions. The release also adds a /env command that prints the loaded environment including instructions, MCP servers, skills, agents, and plugins, a /remote command and --remote flag for remote controlling CLI sessions, and automatic retry of MCP remote server connections on transient network failures. Custom instruction files now preserve special characters like ampersand and quotes, and the Esc key works correctly after a failed /resume lookup.",
+          "action": "Update Copilot CLI to 1.0.25 on developer machines and CI runners. Replace any hand maintained MCP server install scripts with the new registry guided flow and verify your team allowlist policy still applies. Run /env on a clean session to baseline the loaded MCP servers, skills, and agents before you start layering in remote control via /remote.",
+          "clientPitch": "GitHub just turned the MCP registry into a one command install for Copilot CLI. Your team can discover, install, and configure MCP servers without touching JSON files, and ACP clients can now bring their own MCP servers when they connect to a session.",
+          "useCase": "Standing up MCP server fleets across a developer team without per machine config, enterprises that want a single source of truth for which MCP servers are approved, and remote control of long running CLI sessions from a different machine.",
+          "tools": [
+            "GitHub Copilot CLI",
+            "GitHub MCP Registry",
+            "ACP",
+            "MCP"
+          ],
+          "timeline": "April 13, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/github/copilot-cli/releases",
+          "sourceName": "GitHub",
+          "sources": [
+            "https://github.com/github/copilot-cli/releases",
+            "https://github.com/github/copilot-cli/blob/main/changelog.md"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.105 lets PreCompact hooks block compaction and ships a background monitor manifest for plugins",
+          "description": "Anthropic shipped Claude Code 2.1.105 late on April 13 with PreCompact hook support that can now block compaction by exiting with code 2 or returning a JSON decision, plus a top level monitors manifest key that auto arms background monitors when a plugin loads or when a skill is invoked. The release adds a path parameter to the EnterWorktree tool, makes /proactive an alias for /loop, raises the skill description listing cap from 250 to 1,536 characters, strips style and script tags from WebFetch responses, and adds a five minute timeout that retries stalled API streams non streaming instead of hanging. Dozens of fixes follow, including queued message images being dropped, blank screens on long conversations, malformed MCP stdio output hanging sessions, and 429 errors printing raw JSON instead of clean messages.",
+          "action": "Update Claude Code to 2.1.105 on developer machines and any CI runners. If you depend on auto compaction, audit your PreCompact hooks to confirm none accidentally block compaction; if you ship plugins, evaluate adding a monitors manifest entry to replace ad hoc background watchers. Re run any /doctor diagnostics with the new f shortcut to have Claude fix detected issues.",
+          "clientPitch": "Claude Code now lets your hooks veto context compaction and lets plugins arm background monitors at session start without manual setup. The release also stops stalled API streams from hanging and cleans up the 429 error output developers were tripping on.",
+          "useCase": "Long running coding sessions that need surgical control over when context gets compacted, plugin authors building always on observers (lint, test, security), and teams running Claude Code on flaky networks where stalled streams used to require a manual interrupt.",
+          "tools": [
+            "Claude Code",
+            "Claude Code Plugins",
+            "PreCompact Hook",
+            "EnterWorktree"
+          ],
+          "timeline": "April 13, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/anthropics/claude-code/releases",
+          "sourceName": "GitHub",
+          "sources": [
+            "https://github.com/anthropics/claude-code/releases",
+            "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+            "https://code.claude.com/docs/en/changelog"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Platform Update",
+          "headline": "Vercel AI Gateway gates traffic to Zero Data Retention providers with a single team setting",
+          "description": "Vercel announced in its April 13 weekly that AI Gateway now offers team wide Zero Data Retention controls so admins can flip a single switch and have every AI request automatically routed only to providers with a Zero Data Retention agreement, removing the need to negotiate per provider opt outs. The same week added Qwen 3.6 Plus, Z.ai GLM 5.1, and Fast mode support for Claude Opus 4.6 to the gateway, and shipped custom class serialization in the Workflow SDK for passing class instances between workflow and step functions. The Chat SDK gained an official Liveblocks vendor adapter for bots that read and respond inside Liveblocks Comments threads.",
+          "action": "If you use Vercel AI Gateway, enable Zero Data Retention at the team level and audit which models become unavailable under the new gating. Roll the new Qwen 3.6 Plus and GLM 5.1 entries into your routing fallback chain. Test Fast mode on Claude Opus 4.6 for any latency sensitive flow.",
+          "clientPitch": "Vercel AI Gateway now lets you guarantee Zero Data Retention with a single team switch instead of chasing legal opt outs across every provider. The same release adds Qwen 3.6 Plus and GLM 5.1 to the gateway and turns on Fast mode for Claude Opus 4.6.",
+          "useCase": "Regulated industries that need contractual ZDR by default, builders who want to add Chinese open weight models to a gateway routing chain, and applications that want sub second Opus 4.6 responses without changing prompts.",
+          "tools": [
+            "Vercel AI Gateway",
+            "Vercel Workflow SDK",
+            "Vercel Chat SDK",
+            "Qwen 3.6 Plus",
+            "GLM 5.1",
+            "Claude Opus 4.6 Fast Mode",
+            "Liveblocks"
+          ],
+          "timeline": "April 13, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://community.vercel.com/t/vercel-weekly-2026-04-13/38153",
+          "sourceName": "Vercel",
+          "sources": [
+            "https://community.vercel.com/t/vercel-weekly-2026-04-13/38153",
+            "https://vercel.com/changelog",
+            "https://vercel.com/docs/ai-gateway"
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Research",
+          "headline": "Stanford HAI publishes the 2026 AI Index showing China has erased the US model lead",
+          "description": "Stanford HAI released the ninth edition of its AI Index on April 13, reporting that the gap between the top US and Chinese frontier models has effectively closed and that as of March 2026 Anthropic's leader sits only 2.7 percentage points ahead of the best Chinese model. The report finds generative AI hit 53 percent global population adoption within three years (faster than the PC or the internet), with Singapore at 61 percent and the United Arab Emirates at 54 percent versus the United States at 28.3 percent in 24th place. The Foundation Model Transparency Index average score collapsed from 58 to 40 as labs disclose less about training data, compute, capabilities, and risks.",
+          "action": "Use the new Index numbers when you scope multi provider sourcing strategies; the China gap close means Qwen, GLM, and DeepSeek are now defensible primaries for non US workloads. Quote the adoption gap when pitching automation projects in Asia and Europe where the curve is six to ten years ahead of the US benchmark. Re check your model risk register against the lower transparency scores.",
+          "clientPitch": "The 2026 Stanford AI Index is out and it confirms what builders already see in benchmarks: Chinese frontier models are within three points of the US leaders, transparency is collapsing, and Asia and Europe are adopting AI faster than North America. It is the cleanest single source of statistics to bring to a strategy conversation.",
+          "useCase": "Anchoring strategy decks with current benchmark numbers, justifying multi provider sourcing that includes Chinese labs, and benchmarking automation adoption rates against country level baselines.",
+          "tools": [
+            "Stanford AI Index"
+          ],
+          "timeline": "April 13, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+          "sourceName": "Stanford HAI",
+          "sources": [
+            "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+            "https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report",
+            "https://spectrum.ieee.org/state-of-ai-index-2026",
+            "https://siliconangle.com/2026/04/13/stanford-hais-2026-ai-index-reveals-china-u-s-now-neck-neck-race-global-dominance/",
+            "https://www.technologyreview.com/2026/04/13/1135675/want-to-understand-the-current-state-of-ai-check-out-these-charts/"
           ]
         }
       ]
