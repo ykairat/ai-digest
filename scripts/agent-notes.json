@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-14T12:00+06:00",
+  "lastUpdated": "2026-04-15T12:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -121,6 +121,23 @@
     "2026-04-14: Anthropic compute deal with Google and Broadcom (April 6-7) skipped as M&A/infrastructure event without API capability change.",
     "2026-04-14: Apple smart glasses (Bloomberg April 12) and Oracle Bloom Energy power deal (Bloomberg April 13) skipped as hardware/infrastructure not in scope.",
     "2026-04-14: GPT-6 / OpenAI 'Spud' April 14 release rumor explicitly unconfirmed across multiple sources. Skipped as speculation without source dates.",
-    "2026-04-14: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge from detached HEAD commit (24ab9a8). Root cause persists: sessions still start in detached HEAD state. Working file scripts/new-digest.json was leftover from yesterday's run and was deleted before the fresh run."
+    "2026-04-14: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge from detached HEAD commit (24ab9a8). Root cause persists: sessions still start in detached HEAD state. Working file scripts/new-digest.json was leftover from yesterday's run and was deleted before the fresh run.",
+    "2026-04-15: 6 items (3 CRITICAL, 2 WATCH, 1 LOW). Anthropic Claude Sonnet 4 and Opus 4 deprecation with June 15 retirement (CRITICAL 9, dated April 14 primary source), The Information scoop on Claude Opus 4.7 and AI website/presentation design tool ready to ship this week with Figma down 6% / Wix 4.7% / Adobe 2.7% / GoDaddy 3% market reaction (CRITICAL 8), Claude Code 2.1.108 with ENABLE_PROMPT_CACHING_1H env var plus /recap and built-in slash command discovery plus 2.1.109 (CRITICAL 8), GitHub Copilot CLI 1.0.26 localhost ACP + context compaction fix plus 1.0.27 /ask and marketplace refresh (WATCH 7), n8n 2.17.1 pre-release with MiniMax chat model sub node plus 2.16.1 patch (WATCH 6), Google DeepMind Gemini Robotics-ER 1.6 on Gemini API with 93% instrument reading (LOW 5, robotics is in topicsLowInterest but it is a Gemini API capability).",
+    "2026-04-15: platform.claude.com/docs/en/release-notes/overview still fetchable via WebFetch. April 14 entry for Sonnet 4/Opus 4 deprecation was the freshest Anthropic source this run, pulled directly from the primary source.",
+    "2026-04-15: github.com/anthropics/claude-code/releases fetchable. v2.1.108 (April 14 19:12 UTC) is the substantive release; v2.1.109 (April 15 04:02 UTC) is a one liner UI improvement bundled into the same item.",
+    "2026-04-15: github.com/n8n-io/n8n/releases fetchable. n8n@2.17.1 tagged April 15 as pre release on top of 2.17.0, adding the MiniMax chat model sub node (PR 28485). n8n@2.16.1 and 1.123.31 also tagged April 15 as stable patches. Combined into one item since the MiniMax node is the only substantive feature.",
+    "2026-04-15: github.com/github/copilot-cli/releases fetchable. v1.0.26 (April 14 18:45 UTC) shipped 18 fixes including ACP localhost binding and context compaction stability; v1.0.27 (April 15 01:23 UTC) added /ask and marketplace refresh. Combined into one item.",
+    "2026-04-15: github.com/openai/codex/releases shows only 0.121.0-alpha.8 through alpha.12 within window (April 14 15:00 UTC to April 15 05:46 UTC). All pre-release alphas, skipped per established precedent. Will revisit when 0.121.0 stable lands.",
+    "2026-04-15: Anthropic Opus 4.7 is a pre-launch scoop but included as CRITICAL 8 because The Information is Tier 1, the stock market reaction (Figma -6%, Wix -4.7%, Adobe -2.7%, GoDaddy -3%) is a real event, and the April 11 digest set precedent by including the OpenAI Trusted Access for Cyber scoop. Confidence set to medium to reflect pre-launch status.",
+    "2026-04-15: Gemini Robotics-ER 1.6 is a Gemini API release, verified on deepmind.google/blog and blog.google for April 14. Robotics is in topicsLowInterest, so scored as LOW 5 but included because it is a direct Gemini API capability add with a dramatic 23% -> 93% instrument reading jump that has real applicability in manufacturing and field service clients.",
+    "2026-04-15: GPT-6 / Spud April 14 rumor proven false, no official launch from OpenAI. Skipped as speculation.",
+    "2026-04-15: EU AI Act Digital Omnibus trilogue continues with April 28 political agreement target. Industry letter from 15 associations April 13 is advocacy, not a policy change. Skipped as no immediate API or product capability change.",
+    "2026-04-15: US Treasury seeking access to Anthropic Mythos and Anthropic $800B valuation talks (both Bloomberg April 14) are business/policy events without immediate API impact. Skipped per rules excluding funding and strategy events.",
+    "2026-04-15: Anthropic adding Novartis CEO to board (April 14) is corporate governance, skipped per rules.",
+    "2026-04-15: Harvey Legal Agents 700K daily tasks interview at ArtificialLawyer (April 14) is a metrics update and interview, not a product launch. The Spectre Agent launch was April 3, already outside window. Skipped.",
+    "2026-04-15: OpenAI DPO fine-tuning mention for gpt-4.1-2025-04-14 snapshots is a year-old feature (GPT-4.1 was released April 14 2025). The 2025-04-14 suffix is the model snapshot date, not a 2026 feature release. Skipped as stale relabel.",
+    "2026-04-15: Vercel AI Gateway Qwen 3.6 Plus / Claude Opus 4.6 Fast mode / Liveblocks already covered in yesterday's digest (April 14). Skipped to avoid duplication.",
+    "2026-04-15: Zapier, Make.com, and Airtable had no product updates found for April 14-15.",
+    "2026-04-15: Detached HEAD recurred again. Fixed by fetch origin/main, checkout main, fast-forward from detached HEAD (768702f). Root cause persists."
   ]
 }
