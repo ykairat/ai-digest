@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-15",
     "2026-04-14",
     "2026-04-13",
     "2026-04-12",
@@ -2102,6 +2103,184 @@
             "https://spectrum.ieee.org/state-of-ai-index-2026",
             "https://siliconangle.com/2026/04/13/stanford-hais-2026-ai-index-reveals-china-u-s-now-neck-neck-race-global-dominance/",
             "https://www.technologyreview.com/2026/04/13/1135675/want-to-understand-the-current-state-of-ai-check-out-these-charts/"
+          ]
+        }
+      ]
+    },
+    "2026-04-15": {
+      "dateKey": "2026-04-15",
+      "date": "April 15, 2026",
+      "summary": "**Anthropic announces June 15 retirement for Claude Sonnet 4 and Opus 4 while The Information reports a Claude Opus 4.7 plus an AI website and presentation design tool shipping this week, Claude Code 2.1.108 and 2.1.109 add one hour prompt cache TTL, a session recap, and model discovered built in slash commands, GitHub Copilot CLI 1.0.26 and 1.0.27 ship /ask plus marketplace refresh and localhost only ACP, n8n 2.17.1 adds a MiniMax chat model sub node, and Google DeepMind opens Gemini Robotics-ER 1.6 on the Gemini API.**",
+      "totalScanned": 6,
+      "relevant": 5,
+      "critical": 3,
+      "watch": 2,
+      "low": 1,
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Deprecation",
+          "headline": "Anthropic sets June 15 retirement for Claude Sonnet 4 and Opus 4, forcing migration to the 4.6 generation",
+          "description": "Anthropic announced the deprecation of Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) on April 14, with retirement on the Claude API scheduled for June 15, 2026. The release notes direct every remaining user to Claude Sonnet 4.6 and Claude Opus 4.6 before that cutoff. Workloads still pinned to the 20250514 snapshots will stop working two months from now.",
+          "action": "Audit every Claude API key and Bedrock, Vertex AI, and Foundry workload for the claude-sonnet-4-20250514 and claude-opus-4-20250514 model IDs, then update them to claude-sonnet-4-6 and claude-opus-4-6 in staging this week. Re baseline token cost and latency on the 4.6 generation since pricing and thinking behavior differ from the retiring snapshots. Set a calendar reminder for May 15 to confirm every caller has migrated and another for June 10 to catch any new integrations that slipped the net.",
+          "clientPitch": "Any Claude integration still using the original 4 series models will return errors from June 15. We can audit every client workflow, dual run the 4.6 replacements in staging, and cut over before the retirement window closes so nothing breaks in production.",
+          "useCase": "Migration planning for any n8n, Make.com, Zapier, or custom pipeline that pins a Claude model ID, plus vendor risk sign off for Bedrock and Vertex AI customers that need a documented migration path.",
+          "tools": [
+            "Claude API",
+            "Claude Sonnet 4",
+            "Claude Opus 4",
+            "Claude Sonnet 4.6",
+            "Claude Opus 4.6",
+            "Amazon Bedrock",
+            "Google Vertex AI",
+            "Microsoft Foundry"
+          ],
+          "timeline": "April 14, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+          "sourceName": "Anthropic Release Notes",
+          "sources": [
+            "https://platform.claude.com/docs/en/release-notes/overview",
+            "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Product Launch",
+          "headline": "Anthropic readies Claude Opus 4.7 and an AI website and presentation design tool for a same week launch",
+          "description": "The Information reported on April 14 that Anthropic is preparing to ship Claude Opus 4.7 alongside a new AI powered tool for designing websites and presentations, with both products expected as soon as this week. The described design tool creates apps, landing pages, photo galleries, and simple games from natural language prompts and bundles live previews, databases, authentication, analytics, and one click deployment. The market reaction was immediate with Figma down 6 percent, Wix down 4.7 percent, Adobe down 2.7 percent, and GoDaddy down 3 percent on April 14.",
+          "action": "Treat Opus 4.7 as the next default in your Claude router as soon as it lands in platform.claude.com and validate any extended thinking or agent team workloads against it before rolling forward. Spin up a sandbox of the new design tool the moment it ships to benchmark it against Figma Make, Lovable, and Vercel v0 for fast client prototype work. Warn clients already on Figma, Wix, or GoDaddy that Anthropic is entering their lane and plan positioning for multi tool stacks.",
+          "clientPitch": "Anthropic is about to ship a flagship model upgrade and a direct competitor to Figma, Wix, and Adobe that turns prompts into live, deployable web apps. We can have a client ready prototype pipeline on the new tool the day it ships so you benefit from the cost drop without rebuilding your design stack.",
+          "useCase": "Client landing page and presentation prototyping straight from a brief, internal tool building without a design system investment, and multi agent long horizon workloads that benefit from the Opus 4.7 intelligence bump.",
+          "tools": [
+            "Claude Opus 4.7",
+            "Claude API",
+            "Figma",
+            "Wix",
+            "Adobe",
+            "GoDaddy",
+            "Vercel v0",
+            "Lovable"
+          ],
+          "timeline": "April 14, 2026",
+          "confidence": "medium",
+          "sourceTier": 1,
+          "sourceUrl": "https://www.theinformation.com/briefings/exclusive-anthropic-preps-opus-4-7-model-ai-design-tool",
+          "sourceName": "The Information",
+          "sources": [
+            "https://www.theinformation.com/briefings/exclusive-anthropic-preps-opus-4-7-model-ai-design-tool",
+            "https://dataconomy.com/2026/04/15/anthropic-to-launch-claude-opus-4-7-this-week/",
+            "https://thetechportal.com/2026/04/15/anthropic-could-soon-release-opus-4-7-model-and-ai-design-tool/",
+            "https://www.gurufocus.com/news/8792974/anthropic-launches-ai-tools-impacting-design-stocks-gddy-adbe-wix-figma"
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Developer Tools",
+          "headline": "Claude Code 2.1.108 ships one hour prompt caching, a session recap, and lets the model invoke built in slash commands",
+          "description": "Claude Code 2.1.108 landed April 14 with the ENABLE_PROMPT_CACHING_1H env var that opts API key, Bedrock, Vertex, and Foundry users into a one hour cache TTL, a new /recap slash command that rebuilds context when returning to a session, and a Skill tool path that lets the model discover and invoke built in /init, /review, and /security-review without the user running them. The release also turns /undo into an alias for /rewind, adds warnings when /model switches mid conversation and when prompt caching is disabled, filters /resume to the current directory by default, and reduces memory for file reads and edits through on demand syntax grammar loading. Version 2.1.109 shipped hours later on April 15 with a rotating progress hint on the extended thinking indicator.",
+          "action": "Export ENABLE_PROMPT_CACHING_1H=1 in any shared Claude Code runner whose prompts are reused between 5 minutes and 1 hour, and set FORCE_PROMPT_CACHING_5M only where ephemeral workloads need the short window. Wire /recap into your session onboarding guide since returning users now get automatic context instead of a cold transcript. Audit any policy that blocked slash commands, since the model can now invoke /security-review and /review itself via the Skill tool.",
+          "clientPitch": "Claude Code sessions that span a work day just got dramatically cheaper because the cache now survives lunch breaks instead of expiring in five minutes, and returning developers now get an automatic recap so they skip the ramp up.",
+          "useCase": "Long running Claude Code sessions in consulting engagements, cost optimization for teams paying per token on Bedrock or Vertex AI, and enforcing automatic security review on every significant code change.",
+          "tools": [
+            "Claude Code",
+            "Claude API",
+            "Amazon Bedrock",
+            "Google Vertex AI",
+            "Microsoft Foundry",
+            "Skill tool"
+          ],
+          "timeline": "April 14 to 15, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.108",
+          "sourceName": "GitHub",
+          "sources": [
+            "https://github.com/anthropics/claude-code/releases/tag/v2.1.108",
+            "https://github.com/anthropics/claude-code/releases/tag/v2.1.109",
+            "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Developer Tools",
+          "headline": "GitHub Copilot CLI 1.0.26 binds ACP to localhost and 1.0.27 adds a /ask command and a marketplace refresh",
+          "description": "GitHub Copilot CLI 1.0.26 shipped April 14 with eighteen improvements including ACP server binding to localhost only to prevent unintended network exposure, session stability when context compaction splits tool calls at checkpoints, plugin hook environment variables, MCP retry logic, and a fix for slash prefixed tokens being treated as file paths. Version 1.0.27 followed on April 15 with a /ask command for quick questions that do not touch conversation history and a copilot plugin marketplace update command that refreshes plugin catalogs without reinstalling. WSL clipboard paste no longer injects invisible BOM characters and the status bar now hints @files, #issues, and slash commands while typing.",
+          "action": "Upgrade Copilot CLI on every developer and CI runner to 1.0.27 so the localhost ACP binding and the context compaction stability fix ship together, and rerun any automation that depended on the old plugin marketplace sync. Add the new /ask command to onboarding docs so quick questions stop polluting the main conversation thread. Re test any WSL setup that previously had paste corruption issues before closing related bugs.",
+          "clientPitch": "Copilot CLI now keeps quick questions out of long running conversations, refreshes plugin marketplaces with a single command, and closes a network exposure gap on its agent protocol server. These changes matter for any team running Copilot CLI on shared developer machines or inside CI.",
+          "useCase": "Shared dev containers where the ACP port used to be reachable by other processes, long context compaction heavy coding sessions that were crashing under 1.0.25, and plugin distribution via internal marketplaces.",
+          "tools": [
+            "GitHub Copilot CLI",
+            "MCP",
+            "Agent Client Protocol",
+            "GitHub Copilot plugins"
+          ],
+          "timeline": "April 14 to 15, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/github/copilot-cli/releases/tag/v1.0.27",
+          "sourceName": "GitHub",
+          "sources": [
+            "https://github.com/github/copilot-cli/releases/tag/v1.0.26",
+            "https://github.com/github/copilot-cli/releases/tag/v1.0.27"
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Platform Update",
+          "headline": "n8n 2.17.1 pre release adds a MiniMax chat model sub node and 2.16.1 ships a stable line patch",
+          "description": "n8n tagged 2.17.1 on April 15 as a pre release on top of the 2.17.0 AI Gateway drop from two days earlier, adding a MiniMax chat model sub node (pull request 28485) that can now be used anywhere n8n expects an AI chat model or sub agent. The stable 2.16.1 patch went out the same day and 1.123.31 carried a maintenance fix to the 1.x branch. Together the three tags let both the bleeding edge pre release line and the two stable channels pick up MiniMax coverage and rollup fixes on the same day.",
+          "action": "Pilot the MiniMax chat model sub node on one workflow in a staging 2.17.1 instance and benchmark it against your existing OpenAI, Anthropic, and Alibaba Model Studio routes for cost, latency, and Mandarin quality. Promote the 2.16.1 patch to any production self hosted stack that has been holding on 2.16.0. Upgrade self hosted 1.x instances to 1.123.31 even if you are still on the old major.",
+          "clientPitch": "n8n now covers every major Chinese frontier model provider out of the box. You can mix MiniMax, Moonshot Kimi, Alibaba Cloud Model Studio, and the Western labs in one workflow, with price arbitrage taken in the UI instead of in code.",
+          "useCase": "Cost arbitrage between MiniMax and Western APIs inside a single n8n workflow, sub agent orchestration where the planner and executor use different providers, and localization pipelines that need a native Chinese language model.",
+          "tools": [
+            "n8n",
+            "MiniMax",
+            "MiniMax chat model sub node",
+            "Alibaba Cloud Model Studio",
+            "Moonshot Kimi"
+          ],
+          "timeline": "April 15, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/n8n-io/n8n/releases/tag/n8n@2.17.1",
+          "sourceName": "GitHub",
+          "sources": [
+            "https://github.com/n8n-io/n8n/releases/tag/n8n@2.17.1",
+            "https://github.com/n8n-io/n8n/releases/tag/n8n@2.16.1",
+            "https://github.com/n8n-io/n8n/releases"
+          ]
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "API Update",
+          "headline": "Google DeepMind opens Gemini Robotics-ER 1.6 on the Gemini API with instrument reading jumping from 23 to 93 percent",
+          "description": "Google DeepMind released Gemini Robotics-ER 1.6 on April 14 and made it available to developers immediately through the Gemini API and Google AI Studio. The embodied reasoning model lifts analog gauge and instrument reading accuracy from 23 percent on the 1.5 version to 93 percent using agentic vision and improves pointing, counting, and success detection over both 1.5 and Gemini 3.0 Flash. Boston Dynamics Spot is already using it to read dashboards autonomously.",
+          "action": "Evaluate Gemini Robotics-ER 1.6 only if your pipeline needs vision grounded spatial reasoning on physical instruments such as meters, gauges, and dashboards, since this is a specialized robotics model rather than a general language update. For general multimodal work stay on Gemini 3.0 Flash or wait for the next flagship. Keep a note that the ER series now crosses the 90 percent gauge reading bar in case a client opportunity in manufacturing, utilities, or field service arrives.",
+          "clientPitch": "Google just made it possible to read a physical gauge or meter from a photo with near perfect accuracy through a standard API call. For clients in manufacturing, energy, or field service this unlocks automation of readings that used to require an on site worker.",
+          "useCase": "Automated meter and gauge reading in utilities, quality control checks on industrial equipment, and robotics planning that needs success detection after an action.",
+          "tools": [
+            "Gemini API",
+            "Google AI Studio",
+            "Gemini Robotics-ER 1.6",
+            "Gemini 3.0 Flash"
+          ],
+          "timeline": "April 14, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://deepmind.google/blog/gemini-robotics-er-1-6/",
+          "sourceName": "Google DeepMind",
+          "sources": [
+            "https://deepmind.google/blog/gemini-robotics-er-1-6/",
+            "https://deepmind.google/models/gemini-robotics/gemini-robotics-er/",
+            "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-1-6/"
           ]
         }
       ]
