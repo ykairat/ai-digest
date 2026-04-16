@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-15T12:00+06:00",
+  "lastUpdated": "2026-04-16T12:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -138,6 +138,24 @@
     "2026-04-15: OpenAI DPO fine-tuning mention for gpt-4.1-2025-04-14 snapshots is a year-old feature (GPT-4.1 was released April 14 2025). The 2025-04-14 suffix is the model snapshot date, not a 2026 feature release. Skipped as stale relabel.",
     "2026-04-15: Vercel AI Gateway Qwen 3.6 Plus / Claude Opus 4.6 Fast mode / Liveblocks already covered in yesterday's digest (April 14). Skipped to avoid duplication.",
     "2026-04-15: Zapier, Make.com, and Airtable had no product updates found for April 14-15.",
-    "2026-04-15: Detached HEAD recurred again. Fixed by fetch origin/main, checkout main, fast-forward from detached HEAD (768702f). Root cause persists."
+    "2026-04-15: Detached HEAD recurred again. Fixed by fetch origin/main, checkout main, fast-forward from detached HEAD (768702f). Root cause persists.",
+    "2026-04-16: 6 items (3 CRITICAL, 3 WATCH, 0 LOW). OpenAI GPT-5.4-Cyber launch plus Trusted Access for Cyber expansion to thousands of defenders (CRITICAL 9, follow-up to the April 11 scoop, counters Anthropic Mythos), Anthropic Claude Code desktop rebuild with parallel sessions plus Routines research preview with scheduled/API/GitHub triggers (CRITICAL 9), Anthropic Claude Enterprise pricing overhaul to $20 per seat plus metered compute (CRITICAL 8), OpenAI Codex CLI 0.121.0 stable with plugin marketplace installs (WATCH 7), Claude Code 2.1.110 with /tui fullscreen and push notification tool (WATCH 7), Google native Gemini macOS app with Option+Space shortcut (WATCH 6).",
+    "2026-04-16: platform.claude.com/docs/en/release-notes/overview still fetchable via WebFetch. Latest entry remains April 14 Sonnet 4/Opus 4 deprecation, already covered yesterday. No new entries for April 15 or 16.",
+    "2026-04-16: github.com/anthropics/claude-code/releases fetchable. v2.1.110 (April 15 22:07 UTC) is the substantive release with /tui fullscreen, push notification tool, /focus, Ctrl+O verbose transcript, Remote Control /autocompact /context /exit /reload-plugins support, --resume/--continue scheduled task resurrection. v2.1.109 (April 15 04:02 UTC) was a one-liner thinking indicator improvement bundled into the same item.",
+    "2026-04-16: github.com/openai/codex/releases fetchable. v0.121.0 stable finally shipped April 15 20:45 UTC after weeks of alpha builds. Main feature is `codex marketplace add` with app server support for installing plugin marketplaces from GitHub. Also macOS sandbox fixes, Windows path compat, TUI reverse history search. v0.122.0-alpha.1 opened same day at 21:51 UTC. This fulfills the 'will revisit when 0.121.0 stable lands' note from April 13 and 15.",
+    "2026-04-16: github.com/github/copilot-cli/releases fetchable. v1.0.28 (April 16 00:06 UTC) shipped corrected git submodule paths, MCP migration guidance refinements, Azure resource ID false positive security warning fixes, mascot blink sequence, resume CLI remote control sessions from picker. Skipped because yesterday's digest already covered 1.0.26 and 1.0.27, and 1.0.28 is predominantly a fix release with no major feature additions. Maintains the n8n bugfix exclusion precedent while still being fetchable for future reference.",
+    "2026-04-16: github.com/n8n-io/n8n/releases shows no new versions since April 15 (2.17.1, 2.16.1, 1.123.31) which were all covered yesterday. No n8n releases in window.",
+    "2026-04-16: OpenAI GPT-5.4-Cyber is the biggest single API story of the week. The April 11 digest set precedent by including the scoop on the TAC program before launch, so the actual launch is a clear must include. Dated April 14 primary announcement (openai.com/index/scaling-trusted-access-for-cyber-defense), confirmed by Axios, SiliconANGLE, HackerNews, HelpNetSecurity (April 15), TheNextWeb. Multiple Tier 1 confirmations.",
+    "2026-04-16: Claude Code Routines + desktop redesign is a structural platform change for the reader's top use case (workflow automation). Dated April 14 across 9to5Mac, SiliconANGLE, VentureBeat, The Register, MacRumors, and Anthropic's own code.claude.com/docs/en/routines. Clearest primary source is the docs page; treated as Tier 1.",
+    "2026-04-16: Claude Enterprise pricing overhaul confirmed across PYMNTS, gurufocus, digitaltoday.co.kr, Gizmodo. Dated April 15. Previous plan was up to $200 per seat with token allowance; new plan is $20 per seat plus metered compute. This is a material pricing change affecting every Enterprise customer. Included as CRITICAL 8.",
+    "2026-04-16: Google Gemini Mac app is a consumer product but directly relevant to builders who bounce between Gemini API testing and the web UI. Included as WATCH 6 because the Option+Space global shortcut and screen sharing are genuinely useful for mixed workstations and finally closes the Mac app gap with OpenAI and Anthropic.",
+    "2026-04-16: Anthropic Coefficient Bio acquisition references still appear in aggregator summaries but the actual event was April 2-3, long outside window. Skipped as stale.",
+    "2026-04-16: DeepSeek V4 still not released. Continues to be teased without hard date. Skipped as speculation.",
+    "2026-04-16: Claude.ai April 15 outage excluded per established precedent of skipping operational events.",
+    "2026-04-16: No new Zapier, Make.com, or Airtable product updates found for April 15-16.",
+    "2026-04-16: EU AI Act extension request from 15 industry associations (April 13) is advocacy, not a policy change. Skipped as no immediate API or product capability change.",
+    "2026-04-16: GPT-6/Spud rumor window April 14 passed with no launch. Skipped as speculation.",
+    "2026-04-16: Detached HEAD recurred again at session start (3fdfaa7). Fixed by fetch origin/main, checkout main, fast-forward merge. Root cause persists: sessions still start in detached HEAD state.",
+    "2026-04-16: Push successful using git push -u origin main directly, no retry needed. Successful push from 3fdfaa7 to 46d2f3d."
   ]
 }
