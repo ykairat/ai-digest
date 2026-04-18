@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-17T12:00+06:00",
+  "lastUpdated": "2026-04-18T12:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -169,6 +169,20 @@
     "2026-04-17: XChat standalone messaging app April 17 launch is consumer messaging / not AI-specific. Skipped.",
     "2026-04-17: DeepSeek V4 still not launched. Rumor window still open into May. Skipped as speculation.",
     "2026-04-17: Zapier, Make.com, Airtable had no product updates found for April 16-17.",
-    "2026-04-17: Detached HEAD recurred at session start (c87ee4c). Fixed by fetch origin/main, checkout main, fast-forward from detached HEAD commit chain. Root cause persists: sessions still start in detached HEAD state."
+    "2026-04-17: Detached HEAD recurred at session start (c87ee4c). Fixed by fetch origin/main, checkout main, fast-forward from detached HEAD commit chain. Root cause persists: sessions still start in detached HEAD state.",
+    "2026-04-18: 6 items (2 CRITICAL, 4 WATCH, 0 LOW). Claude Design launch as AI prototyping and visual design tool powered by Opus 4.7 (CRITICAL 9, Figma stock down 7%, TechCrunch/VentureBeat/Gizmodo/TheRegister April 17). OpenAI Agents SDK sandbox plus model harness with seven providers including Blaxel, Cloudflare, Daytona, E2B, Modal, Runloop, Vercel (CRITICAL 8, TechCrunch April 15, HelpNetSecurity April 16). Claude Haiku 3 retirement tomorrow April 19 (WATCH 7). Claude Code 2.1.113 native binary plus security hardening (WATCH 7). GitHub Copilot CLI 1.0.32 auto model selection plus usage limit warnings (WATCH 7). Gemini 3.1 Flash TTS preview with 200 plus audio tags across 70 languages (WATCH 6).",
+    "2026-04-18: platform.claude.com/docs/en/release-notes/overview still fetchable via WebFetch. Latest entry remains April 16 Opus 4.7 GA and Bedrock open to all. No new entries for April 17 or 18.",
+    "2026-04-18: github.com/anthropics/claude-code/releases fetchable. v2.1.113 (April 17 19:34 UTC) is the substantive release with native binary, deniedDomains, and extensive security hardening. No v2.1.114 as of this run.",
+    "2026-04-18: github.com/github/copilot-cli/releases fetchable. v1.0.32 (April 17 21:51 UTC) shipped auto model, usage warnings, document attachment, --connect flag. v1.0.32-1 (April 17 18:59 UTC) was a feedback save path hotfix.",
+    "2026-04-18: github.com/openai/openai-agents-python/releases fetchable. v0.14.2 (April 18 00:17 UTC) ships sandbox extra path grants and MongoDB session backend. The main sandbox plus harness announcement was April 15 to 16 per TechCrunch and HelpNetSecurity.",
+    "2026-04-18: github.com/openai/codex/releases shows only 0.122.0-alpha.7 through alpha.9 (April 17). All pre release alphas, skipped per established precedent.",
+    "2026-04-18: github.com/n8n-io/n8n/releases shows no new versions since 2.17.2 pre release April 16. No n8n releases April 17 to 18.",
+    "2026-04-18: Gemini 3.1 Flash TTS was released April 15 but was not included in any prior digest (April 16 or 17). Included per Claude for Word precedent (3 days late, significant, never covered). New Gemini API model with 200 plus audio tags, 70 languages, Elo 1211 on Artificial Analysis leaderboard.",
+    "2026-04-18: Claude Design is the product scooped by The Information on April 15 (included in April 15 digest as Opus 4.7 plus AI website and presentation design tool). Now officially launched April 17 with its own product name. Anthropic CPO Mike Krieger left Figma board days before launch.",
+    "2026-04-18: OpenAI Agents SDK sandbox was missed in April 16 and 17 digests despite TechCrunch coverage April 15. Included now within 48 hour extended window. Confirms Assistants API formal deprecation with mid 2026 sunset target.",
+    "2026-04-18: DeepSeek V4 still not released. Best estimates now point to late April. Skipped as speculation.",
+    "2026-04-18: No new Zapier, Make.com, or Airtable product updates found for April 17 to 18.",
+    "2026-04-18: No detached HEAD issue this session. Started on main, up to date with origin/main.",
+    "2026-04-18: Push successful using git push -u origin main with token URL. No retry needed."
   ]
 }
