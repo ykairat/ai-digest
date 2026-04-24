@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-24",
     "2026-04-23",
     "2026-04-22",
     "2026-04-21",
@@ -3349,6 +3350,187 @@
       "relevant": 4,
       "critical": 2,
       "watch": 2,
+      "low": 0
+    },
+    "2026-04-24": {
+      "dateKey": "2026-04-24",
+      "date": "April 24, 2026",
+      "summary": "OpenAI ships GPT-5.5 to ChatGPT and Codex with API access announced at double GPT-5.4 pricing, Anthropic adds filesystem-backed memory to Claude Managed Agents, and OpenAI open-sources an on-device PII detection model under Apache 2.0.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "OpenAI releases GPT-5.5 with 1M context window and API pricing set at double GPT-5.4 rates",
+          "description": "GPT-5.5 launched April 23 for ChatGPT Plus, Pro, Business, Enterprise, and Codex users, with API access described as coming very soon at $5 per 1M input tokens and $30 per 1M output tokens, exactly double GPT-5.4 pricing. A premium gpt-5.5-pro tier is priced at $30 per 1M input and $180 per 1M output. OpenAI argues the effective cost is neutral or lower than GPT-5.4 because the model completes the same Codex tasks with fewer tokens due to significantly higher token efficiency. The model includes a 1M context window and enhanced coding capabilities.",
+          "action": "Benchmark GPT-5.5 on your actual production prompts before assuming the cost is comparable. Token efficiency claims depend heavily on task type. Evaluate gpt-5.5-pro only for tasks where GPT-5.4 quality is already a bottleneck. Monitor API availability date, which has not been specified beyond 'very soon'.",
+          "tools": [
+            "OpenAI API",
+            "ChatGPT",
+            "OpenAI Codex"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/introducing-gpt-5-5/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://tech.yahoo.com/ai/chatgpt/articles/openai-releases-gpt-5-5-192516262.html",
+              "name": "Yahoo Tech"
+            },
+            {
+              "url": "https://artificialanalysis.ai/articles/openai-gpt5-5-is-the-new-leading-AI-model",
+              "name": "Artificial Analysis"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Anthropic ships filesystem-backed memory for Claude Managed Agents in public beta",
+          "description": "As of April 23, the managed-agents-2026-04-01 beta header now activates persistent memory for Claude Managed Agents. Memory is stored as files on a mounted filesystem so agents can read and write their own knowledge between sessions using the same bash and code execution tools already available in the harness. Files are exportable and manageable via the API, giving builders full control over what each agent retains without building a separate vector store or external database.",
+          "action": "Extend any existing Managed Agents integration to use the memory layer before building a custom persistence layer. The filesystem model means you can inspect, edit, and version agent memory with standard file tools, which is a significant ops advantage over embedding-based memory systems.",
+          "tools": [
+            "Claude Managed Agents",
+            "Claude API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://claude.com/blog/claude-managed-agents-memory",
+              "name": "Anthropic"
+            },
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Claude Platform Release Notes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "OpenSource",
+          "headline": "OpenAI releases Privacy Filter as open-weight Apache 2.0 model for on-device PII detection",
+          "description": "OpenAI published Privacy Filter on April 22, an open-weight 1.5B-parameter sparse model with 50M active parameters per forward pass, designed for high-throughput PII detection and redaction directly on device. It achieves a 96% F1 score across eight privacy categories including names, addresses, emails, phone numbers, and account numbers, and processes long inputs in a single pass without sending data to any API. The model is available under Apache 2.0 on Hugging Face and GitHub, allowing commercial use and fine-tuning without royalties or copyleft requirements.",
+          "action": "Add Privacy Filter as a preprocessing step in any pipeline where user-provided text reaches a cloud model. The on-device execution model means sensitive data can be sanitized before it crosses a trust boundary, which is a compliance win for healthcare, legal, and finance clients.",
+          "tools": [
+            "Hugging Face",
+            "GitHub"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/introducing-openai-privacy-filter/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://venturebeat.com/data/openai-launches-privacy-filter-an-open-source-on-device-data-sanitization-model-that-removes-personal-information-from-enterprise-datasets",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://github.com/openai/privacy-filter",
+              "name": "GitHub"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.119 adds config persistence, multi-platform PR review, and hooks timing data",
+          "description": "Released April 23 at 23:24 UTC, v2.1.119 makes /config settings persist to ~/.claude/settings.json with a full project/local/policy override precedence chain. The --from-pr flag now accepts GitLab, Bitbucket, and GitHub Enterprise PR URLs in addition to GitHub.com, and a new prUrlTemplate setting lets teams point code-review links at any host. Hooks now receive duration_ms in PostToolUse and PostToolUseFailure events, enabling timing-based automation and alerting. PowerShell tool commands can be auto-approved in permission mode on Windows.",
+          "action": "Upgrade to 2.1.119 if your team uses GitLab or Bitbucket for code review, as --from-pr now works natively across platforms. Add duration_ms logging to PostToolUse hooks to identify slow tool calls in long agentic sessions.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.119",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "OpenAI Codex CLI 0.124.0 adds TUI reasoning controls, multi-environment app-server, and Bedrock auth",
+          "description": "Released April 23 at 18:29 UTC, v0.124.0 stable introduces keyboard shortcuts for controlling reasoning depth directly in the TUI without editing config, support for multiple named environments in app-server sessions so teams can switch contexts within one session, and AWS Bedrock authentication for OpenAI-compatible provider configurations. Hooks can now be configured inline as stable config rather than external scripts, and eligible ChatGPT plans default to the Fast service tier.",
+          "action": "Use the multi-environment flag in app-server sessions to separate dev, staging, and production contexts in long-running Codex agents without restarting the session. Test inline hook configuration for simpler CI pipeline integration.",
+          "tools": [
+            "OpenAI Codex CLI",
+            "Amazon Bedrock"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases/tag/v0.124.0",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI v1.0.35 stable adds named sessions and slash command argument tab-completion",
+          "description": "Released April 23 at 23:24 UTC, v1.0.35 stable makes slash commands fully tab-completable including arguments and subcommands, which significantly reduces typing in long sessions. Sessions can now be named with --name and resumed by name, replacing the previous UUID-based resume flow. Ctrl+Y is added as an alternative to Tab for accepting highlighted options in completion popups.",
+          "action": "Adopt --name for sessions in shared team environments where multiple engineers hand off the same context. Slash command tab-completion makes the tool meaningfully faster in complex multi-step agent interactions.",
+          "tools": [
+            "GitHub Copilot CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.35",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 6,
+      "relevant": 6,
+      "critical": 2,
+      "watch": 4,
       "low": 0
     }
   },
