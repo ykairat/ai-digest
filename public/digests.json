@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-25",
     "2026-04-24",
     "2026-04-23",
     "2026-04-22",
@@ -3532,6 +3533,148 @@
       "critical": 2,
       "watch": 4,
       "low": 0
+    },
+    "2026-04-25": {
+      "dateKey": "2026-04-25",
+      "date": "April 25, 2026",
+      "summary": "DeepSeek launches V4 Pro and Flash as MIT-licensed open-weight models matching closed frontier performance at one-sixth the cost, GPT-5.5 API goes live for developers, and Claude Code 2.1.120 ships a CI-ready ultrareview subcommand.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "OpenSource",
+          "headline": "DeepSeek releases V4 Pro and Flash as MIT-licensed open weights rivaling GPT-5.5 and Opus 4.7 at a fraction of cost",
+          "description": "DeepSeek open-sourced V4-Pro (1.6T-parameter MoE, 49B active per token) and V4-Flash (284B total, 13B active) simultaneously on April 24 under the MIT license with weights published to Hugging Face. Both models expose a 1M-token context window natively, dual Thinking and Non-Thinking modes, and support both OpenAI and Anthropic API message formats out of the box. V4-Pro scores 80.6% on SWE-bench Verified at $1.74/$3.48 per million tokens; V4-Flash scores 79.0% at $0.14/$0.28, roughly one-sixth the cost of Opus 4.7 or GPT-5.5.",
+          "action": "Test V4-Flash as a drop-in for high-volume agent loops where GPT-5.4 Mini or Gemini Flash served before. V4-Pro for near-frontier reasoning at significantly reduced cost. Migrate off deepseek-chat and deepseek-reasoner before their July 24, 2026 retirement.",
+          "tools": [
+            "DeepSeek API",
+            "n8n",
+            "OpenAI-compatible clients"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://api-docs.deepseek.com/news/news260424",
+              "name": "DeepSeek API Docs"
+            },
+            {
+              "url": "https://www.bloomberg.com/news/articles/2026-04-24/deepseek-unveils-newest-flagship-a-year-after-ai-breakthrough",
+              "name": "Bloomberg"
+            },
+            {
+              "url": "https://www.cnbc.com/2026/04/24/deepseek-v4-llm-preview-open-source-ai-competition-china.html",
+              "name": "CNBC"
+            },
+            {
+              "url": "https://venturebeat.com/technology/deepseek-v4-arrives-with-near-state-of-the-art-intelligence-at-1-6th-the-cost-of-opus-4-7-gpt-5-5",
+              "name": "VentureBeat"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "GPT-5.5 API goes live for all key holders one day after ChatGPT-only rollout",
+          "description": "OpenAI confirmed on April 24 that GPT-5.5 and GPT-5.5 Pro are now accessible via standard API keys, closing the gap from the day-prior launch that was limited to ChatGPT and Codex. Standard pricing is $5 per million input tokens and $30 per million output tokens; GPT-5.5 Pro is $30/$180. The updated system card describing API-specific safeguards was published alongside the availability announcement. The 1M context window and agentic computer-use capabilities are fully available to API callers.",
+          "action": "Integrate GPT-5.5 into pilot workflows now that API access is live. At double GPT-5.4 pricing, benchmark quality gains against cost before swapping model IDs in production.",
+          "tools": [
+            "OpenAI API",
+            "Codex CLI",
+            "n8n",
+            "Make.com"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/introducing-gpt-5-5/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://venturebeat.com/ai/openais-gpt-5-5-is-here-and-its-no-potato-narrowly-beats-anthropics-claude-mythos-preview-on-terminal-bench-2-0",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://techcrunch.com/2026/04/23/openai-chatgpt-gpt-5-5-ai-model-superapp/",
+              "name": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.120 ships CI-ready ultrareview subcommand and drops Windows Git Bash requirement",
+          "description": "Released April 25 at 00:14 UTC, v2.1.120 adds the `claude ultrareview [target]` subcommand for non-interactive code review that prints findings to stdout and exits with a standard exit code, enabling direct CI pipeline integration. Windows installations no longer require Git for Windows as PowerShell is now the fallback shell tool. Skills can reference the current effort setting via `${CLAUDE_EFFORT}`, and the `AI_AGENT` environment variable is now propagated to subprocesses enabling GitHub traffic attribution to Claude Code.",
+          "action": "Add `claude ultrareview` to your PR CI step for automated code review output. Update effort-sensitive Skills to use `${CLAUDE_EFFORT}`. Windows-only deployments can now drop Git for Windows as a prerequisite.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Anthropic launches Rate Limits API for programmatic workspace quota monitoring",
+          "description": "As of April 24, the Rate Limits API lets organization administrators query current rate limit configurations for their org and individual workspaces via a dedicated API endpoint. The response includes both Anthropic-set limits and any custom limits configured in the Console, removing the need for manual Console polling in capacity planning and alerting pipelines. The API is authenticated with standard API keys.",
+          "action": "Wire the Rate Limits API into your observability stack. Replace manual Console checks with automated rate-limit headroom monitoring to catch capacity constraints before they affect production workflows.",
+          "tools": [
+            "Claude API",
+            "Claude Console"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic Release Notes"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Codex CLI 0.125.0 adds Unix socket app-server transport and persistent permission profiles",
+          "description": "Released April 24 at 18:00 UTC, v0.125.0 brings stable app-server integrations using Unix socket transport for local inter-process communication without HTTP overhead. Permission profiles now persist across sessions so tool-access approvals survive process restarts and do not require re-granting on each launch. Model provider configuration is also updated in this release.",
+          "action": "Upgrade Codex CLI to 0.125.0 if building local agent harnesses or app-server integrations. The persistent permission profile meaningfully reduces friction for multi-session developer workflows.",
+          "tools": [
+            "Codex CLI",
+            "OpenAI API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases",
+              "name": "GitHub Releases"
+            }
+          ]
+        },
+        {
+          "score": 5,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI 1.0.36 adds keep-alive command and fixes silently broken custom instruction loading",
+          "description": "Released April 24 at 18:39 UTC, v1.0.36 adds the `/keep-alive` command to maintain session context, introduces a double-Esc requirement to cancel in-progress work preventing accidental interruptions, and fixes a bug where custom instruction files stored in `.gitignored` directories were silently skipped and never applied. Subcommand picker selection indicators were also added.",
+          "action": "Update to 1.0.36 immediately if you use custom `.claude` instruction files in gitignored directories, as those files have been silently failing to load in prior versions.",
+          "tools": [
+            "GitHub Copilot CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases",
+              "name": "GitHub Releases"
+            }
+          ]
+        }
+      ]
     }
   },
   "items": [],

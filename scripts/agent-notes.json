@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24T08:00+06:00",
+  "lastUpdated": "2026-04-25T08:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -243,6 +243,15 @@
     "2026-04-24: Detached HEAD recurred at session start (e1c169e). Fixed by stash, checkout main, fast-forward FETCH_HEAD, stash pop. Root cause persists: sessions still start in detached HEAD state.",
     "2026-04-24: openai.com/index/introducing-gpt-5-5/ returned 403 via WebFetch. WebSearch summaries confirmed release date and pricing via Yahoo Tech, Artificial Analysis, and StreetInsider.",
     "2026-04-24: DeepSeek V4 still not released as of April 23 per multiple sources. 'Late April' window is running out. Skip until confirmed launch.",
-    "2026-04-24: 1M context window retirement for Sonnet 4.5 and Sonnet 4 is April 30 (6 days away). Already covered in April 3 digest. Not re-included per duplication rule."
+    "2026-04-24: 1M context window retirement for Sonnet 4.5 and Sonnet 4 is April 30 (6 days away). Already covered in April 3 digest. Not re-included per duplication rule.",
+    "2026-04-25: 6 items (1 CRITICAL, 5 WATCH, 0 LOW). DeepSeek V4 Pro and Flash MIT open-weight launch (CRITICAL 9, April 24, Bloomberg/CNBC/VentureBeat/DeepSeek API docs), GPT-5.5 API live for all API key holders (WATCH 7, April 24, follow-up to April 24 digest), Claude Code 2.1.120 with ultrareview CI subcommand and Windows Git Bash independence (WATCH 7, April 25 00:14 UTC), Anthropic Rate Limits API for programmatic quota management (WATCH 6, April 24, platform.claude.com release notes), Codex CLI 0.125.0 with Unix socket app-server and persistent permission profiles (WATCH 6, April 24), GitHub Copilot CLI 1.0.36 with keep-alive and custom instruction loading fix (WATCH 5, April 24).",
+    "2026-04-25: DeepSeek V4 was tracked as 'not yet released' in all prior digests since April 12. Finally launched April 24 one year after the V3 Sputnik moment. MIT license (NOT Apache 2.0 as earlier surmised). V4-Pro beats V3.2 on SWE-bench by significant margin. Both models support OpenAI and Anthropic API formats natively.",
+    "2026-04-25: GPT-5.5 was covered in April 24 digest but API access was not yet live. The April 24 release notes specifically flagged API as 'coming soon' with different safeguards needed. API went live April 24. Included as WATCH 7 because it unlocks a genuinely new capability for builders. This pattern (announce to ChatGPT, API follows day after) is now established for OpenAI major releases.",
+    "2026-04-25: Anthropic Rate Limits API (April 24) is a new primary source find from platform.claude.com. It's a small but useful operational primitive for builders managing multi-workspace deployments. Added to coverage for future runs.",
+    "2026-04-25: Detached HEAD recurred at session start. Fixed by checking out main and merging. Root cause persists.",
+    "2026-04-25: 1M context window retirement (April 30) is now 5 days away. Already covered April 3 and noted in April 22, 23, 24 agent notes. Continued per duplication rule - not re-included.",
+    "2026-04-25: Google Gemini Drops April 2026 blog mentioned new TTS voices in Google Vids but Gemini 3.1 Flash TTS was already covered in April 18 digest. Skipped as duplicate. Personalized image generation (Nano Banana) and global Personal Intelligence are consumer features, not API changes. Skipped.",
+    "2026-04-25: n8n@2.17.7 (April 24) was only a Google Gemini default models update. Skipped per minor update precedent. n8n@2.18.3 (April 24) is pre-release. Skipped per pre-release precedent.",
+    "2026-04-25: GitHub Copilot CLI v1.0.36 is a borderline include at WATCH 5. The silent custom instruction loading fix is the strongest reason to include it (affects any user with .gitignored .claude directories). The /keep-alive command is new but minor. Future runs: evaluate CLI releases at WATCH 5 threshold only if there is at least one clear user-facing bug fix or behavioral change."
   ]
 }
