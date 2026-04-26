@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-26",
     "2026-04-25",
     "2026-04-24",
     "2026-04-23",
@@ -3675,6 +3676,108 @@
           ]
         }
       ]
+    },
+    "2026-04-26": {
+      "dateKey": "2026-04-26",
+      "date": "April 26, 2026",
+      "summary": "Gemini adds autonomous research agents with MCP support to its API; an LLM deployment toolkit sees active SSRF exploitation within hours of disclosure; OpenAI releases GPT-5.5 prompting guidance for API developers.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Gemini adds Deep Research Max with MCP support and private data access to Interactions API",
+          "description": "Google launched two new agent models via the Gemini API Interactions API on April 21: Deep Research (speed-optimized) and Deep Research Max (maximum comprehensiveness), both built on Gemini 3.1 Pro. The agents combine web search with private enterprise data sources via MCP servers in a single API call, returning fully cited reports with embedded charts. Access is via paid Gemini API tiers using model IDs deep-research-preview-04-2026 and deep-research-max-preview-04-2026.",
+          "action": "Explore the Interactions API for automated research pipelines; test MCP connector integration to route private data sources alongside web search for enterprise knowledge workflows.",
+          "tools": [
+            "Gemini API",
+            "Google AI Studio"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/",
+              "name": "Google Blog"
+            },
+            {
+              "url": "https://siliconangle.com/2026/04/22/google-launches-ai-research-agents-powered-gemini-3-1-pro/",
+              "name": "SiliconANGLE"
+            },
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/deep-research",
+              "name": "Gemini API Docs"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "LMDeploy SSRF flaw exploited within 13 hours of disclosure affecting VLM inference servers",
+          "description": "CVE-2026-33626, a high-severity (CVSS 7.5) server-side request forgery vulnerability in LMDeploy vision-language image loader, was disclosed April 21 and actively exploited within 13 hours. Attackers used the load_image() function to probe internal networks, cloud metadata services, Redis, and MySQL from VLM inference endpoints. All LMDeploy versions prior to 0.12.3 are affected.",
+          "action": "Upgrade LMDeploy to 0.12.3 immediately. Add network-level controls restricting outbound HTTP from VLM inference servers to known-safe hosts.",
+          "tools": [
+            "LMDeploy"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://thehackernews.com/2026/04/lmdeploy-cve-2026-33626-flaw-exploited.html",
+              "name": "The Hacker News"
+            },
+            {
+              "url": "https://webflow.sysdig.com/blog/cve-2026-33626-how-attackers-exploited-lmdeploy-llm-inference-engines-in-12-hours",
+              "name": "Sysdig"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "OpenAI publishes GPT-5.5 prompting guide as API goes live",
+          "description": "OpenAI published dedicated GPT-5.5 prompting guidance on April 25, the day after the API opened to all key holders. The key directives: treat GPT-5.5 as a new model family requiring a fresh baseline rather than a drop-in replacement; use shorter outcome-oriented prompts; avoid over-specified process instructions that narrow the model search space. Legacy instruction stacks from GPT-5.4 or earlier can degrade performance on this model.",
+          "action": "Before migrating production GPT-5.4 integrations to GPT-5.5, review the official guide and benchmark a minimal fresh-baseline prompt against your existing instruction stack.",
+          "tools": [
+            "OpenAI API",
+            "GPT-5.5"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://simonwillison.net/2026/apr/25/gpt-5-5-prompting-guide/",
+              "name": "Simon Willison"
+            },
+            {
+              "url": "https://developers.openai.com/api/docs/guides/latest-model",
+              "name": "OpenAI Developer Docs"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 1,
+      "watch": 2,
+      "low": 0
     }
   },
   "items": [],
