@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-27",
     "2026-04-26",
     "2026-04-25",
     "2026-04-24",
@@ -3763,6 +3764,120 @@
             {
               "url": "https://developers.openai.com/api/docs/guides/latest-model",
               "name": "OpenAI Developer Docs"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 1,
+      "watch": 2,
+      "low": 0
+    },
+    "2026-04-27": {
+      "dateKey": "2026-04-27",
+      "date": "April 27, 2026",
+      "summary": "Anthropic admits three engineering changes quietly degraded Claude Code quality for a month; Dispatch persistent desktop agent rolls out to Max subscribers; and a LangChain text splitter SSRF flaw exposes cloud metadata endpoints.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Anthropic confirms three engineering changes behind month-long Claude Code quality drop",
+          "description": "Anthropic published a postmortem identifying three changes that compounded into a significant quality regression affecting Claude Code, the Agent SDK, and Cowork from early March through April 20: default reasoning effort was silently downgraded from high to medium on March 4, a caching bug introduced March 26 incorrectly cleared thinking history every turn instead of once per idle session, and a verbosity prompt added April 16 was found to reduce coding quality before being reverted April 20. All three issues were resolved as of v2.1.116 and Anthropic reset usage limits for all subscribers on April 23. The API itself was not affected; only harness-level changes triggered the degradation.",
+          "action": "Update Claude Code to v2.1.119 or later to ensure all fixes are active. Test any agentic workflows that regressed in March or April against a fresh session to confirm quality is restored. Consider pinning reasoning effort to high explicitly in your CLAUDE.md if silent defaults matter to your workload.",
+          "tools": [
+            "Claude Code",
+            "Claude Agent SDK",
+            "Claude Cowork"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+              "name": "Anthropic Engineering"
+            },
+            {
+              "url": "https://fortune.com/2026/04/24/anthropic-engineering-missteps-claude-code-performance-decline-user-backlash/",
+              "name": "Fortune"
+            },
+            {
+              "url": "https://venturebeat.com/technology/mystery-solved-anthropic-reveals-changes-to-claudes-harnesses-and-operating-instructions-likely-caused-degradation",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://simonwillison.net/2026/Apr/24/recent-claude-code-quality-reports/",
+              "name": "Simon Willison"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Dispatch persistent desktop agent rolls out to Max plans today with computer use in Cowork",
+          "description": "Anthropic is rolling out Dispatch, a persistent agent thread bridging the Claude mobile app to Claude Desktop, to Max plan subscribers starting April 27 with Pro plans following within two days. Claude can open files, run dev tools, click and navigate on screen with no additional setup, allowing users to assign desktop tasks from their phone and return to find them completed. The feature makes Claude a 24/7 background desktop agent for knowledge work without any code or infrastructure requirement.",
+          "action": "Enable computer use in Claude Desktop on your Pro or Max plan. Try assigning a multi-step file preparation or browser-based research task via the mobile app while away from the desk to validate the Dispatch loop.",
+          "tools": [
+            "Claude Cowork",
+            "Claude Desktop",
+            "Claude iOS",
+            "Claude Android"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://support.claude.com/en/articles/12138966-release-notes",
+              "name": "Claude Help Center"
+            },
+            {
+              "url": "https://support.claude.com/en/articles/13947068-assign-tasks-to-claude-from-anywhere-in-cowork",
+              "name": "Claude Help Center (Dispatch)"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "LangChain text splitter SSRF flaw lets attacker controlled redirects reach cloud metadata endpoints",
+          "description": "CVE-2026-41481 in langchain-text-splitters before 1.1.2 allows an attacker-controlled server to redirect HTMLHeaderTextSplitter.split_text_from_url() to internal, localhost, or cloud provider metadata endpoints after the initial URL passes validation, because redirect targets are not revalidated. Successful exploitation can expose AWS EC2 instance metadata, GCP service account tokens, and any credentials available at internal endpoints. The fix is in langchain-text-splitters 1.1.2, published April 24, 2026.",
+          "action": "Pin langchain-text-splitters to 1.1.2 or later immediately. Audit any pipeline that passes user-supplied or externally-sourced URLs to HTMLHeaderTextSplitter, especially if those pipelines run in cloud environments with IMDSv1 enabled or without metadata endpoint firewall rules.",
+          "tools": [
+            "LangChain",
+            "langchain-text-splitters"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://radar.offseq.com/threat/cve-2026-41481-cwe-918-server-side-request-forgery-9716de86",
+              "name": "OffSeq Threat Radar"
+            },
+            {
+              "url": "https://github.com/langchain-ai/langchainjs/security/advisories/GHSA-r399-636x-v7f6",
+              "name": "GitHub Security Advisory"
+            },
+            {
+              "url": "https://cybersecuritynews.com/langchain-vulnerability/",
+              "name": "CyberSecurityNews"
             }
           ],
           "clientPitch": "",

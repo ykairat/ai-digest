@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-26T08:00+06:00",
+  "lastUpdated": "2026-04-27T08:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -260,6 +260,21 @@
     "2026-04-26: DeepSeek V4 API 75% discount until May 5 was not included as a separate item. The V4 launch (CRITICAL 9) was already covered in April 25 digest. The pricing promotion is part of the same announcement. Future runs: if the promotion has a specific expiry countdown (e.g. 48 hours left), that would justify re-including as a time-sensitive action item.",
     "2026-04-26: 1M token context window retirement for Sonnet 4.5 and Sonnet 4 is April 30 (4 days away). Already covered April 3. Not re-included per duplication rule. Note for April 30 run: reframe as completed event (similar to Haiku 3 retirement on April 20).",
     "2026-04-26: No detached HEAD issue this session. Started on main branch and up to date.",
-    "2026-04-26: GPT-5.5 prompting guide (Simon Willison April 25) is an unusual inclusion - a secondary analysis of a product already in digest. Included because: (1) it is a distinct publication with actionable guidance, (2) it was published after the April 25 digest closed, (3) the key message (do not port legacy prompts) is a real error that builders will make. Precedent: can include important developer guides published same-day as companion to prior digest item."
+    "2026-04-26: GPT-5.5 prompting guide (Simon Willison April 25) is an unusual inclusion - a secondary analysis of a product already in digest. Included because: (1) it is a distinct publication with actionable guidance, (2) it was published after the April 25 digest closed, (3) the key message (do not port legacy prompts) is a real error that builders will make. Precedent: can include important developer guides published same-day as companion to prior digest item.",
+    "2026-04-27: 3 items (1 CRITICAL, 2 WATCH, 0 LOW). Anthropic Claude Code quality postmortem (CRITICAL 8, April 23-24, Fortune/VentureBeat/The Register/Simon Willison, not in any prior digest), Claude Dispatch persistent agent thread rolling out to Max plans April 27 and Pro plans April 29 with computer use in Cowork (WATCH 7), CVE-2026-41481 LangChain text splitters SSRF via unvalidated redirect targets exposing cloud metadata credentials fixed in 1.1.2 (WATCH 7, April 24 disclosure).",
+    "2026-04-27: Anthropic postmortem (April 23) was 4 days old at time of inclusion. Extended window applied: significant, never covered, Tier 1 sources (Fortune April 24, VentureBeat, The Register April 23, Simon Willison April 24). Three root causes: reasoning effort downgrade March 4, caching bug March 26, verbosity prompt April 16. All resolved v2.1.116 April 20. Usage limits reset April 23.",
+    "2026-04-27: Claude Dispatch rollout to Max plans confirmed as April 27 via support.claude.com release notes snippets in search results. Computer use in Cowork (files, dev tools, click/navigate) now available for Pro/Max. Feature had been in research preview since March 24 (Mac) and April 5 (Windows) but this is the first non-research-preview rollout to Pro/Max subscribers. Not in any prior digest.",
+    "2026-04-27: CVE-2026-41481 in langchain-text-splitters < 1.1.2 (SSRF via redirect in HTMLHeaderTextSplitter.split_text_from_url). April 24 disclosure. Similar to LMDeploy CVE-2026-33626 (April 26 digest). Both are SSRF vulnerabilities in popular AI infrastructure tools that can expose cloud credentials. LangChain is used in far more production stacks than LMDeploy, so even slightly higher practical impact.",
+    "2026-04-27: No new Claude Code releases found after v2.1.119 (April 23). v2.1.120 was released April 24/25 and had major regressions (8+ bugs, auto-update force-rolled back). A GitHub Gist survival checklist (yurukusa) documents the issues. No v2.1.121 found as of this run. The Anthropic postmortem explains the broader quality context.",
+    "2026-04-27: n8n 2.18.x still pre-release. No stable release. Skipped per established pre-release precedent.",
+    "2026-04-27: Codex CLI 0.126.0-alpha.3 (April 26). Pre-release. Skipped per established precedent.",
+    "2026-04-27: GitHub Copilot CLI v1.0.36 (April 24) was covered in April 25 digest. No new stable releases April 25-27.",
+    "2026-04-27: Grok 4.3 Beta (April 17) is outside the 48-hour window. Skipped.",
+    "2026-04-27: Sora app shutdown (April 26) is a scheduled event completion covered in April 6 digest (OpenAI Sora two-stage shutdown). Skipped per duplication rule.",
+    "2026-04-27: OpenAI Realtime API beta deprecation (May 7) - could not confirm announcement date within 48-hour window. The GA launched August 2025; the May 7 beta shutdown seems to have been announced earlier. Skipped.",
+    "2026-04-27: 1M token context window retirement April 30 is 3 days away. Already covered April 3. Not re-included per duplication rule. Next run (April 30) should reframe as completed event.",
+    "2026-04-27: No new Zapier, Make.com, or Airtable product updates found for April 26-27.",
+    "2026-04-27: No detached HEAD issue this session. Started on main branch and up to date with origin/main.",
+    "2026-04-27: Anthropic Engineering blog (anthropic.com/engineering/*) returns 403 via WebFetch. Used WebSearch summaries + primary URL from search results. Source confirmed as valid via multiple Tier 1 citations."
   ]
 }
