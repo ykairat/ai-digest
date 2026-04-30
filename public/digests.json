@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-30",
     "2026-04-29",
     "2026-04-28",
     "2026-04-27",
@@ -4162,6 +4163,79 @@
       "relevant": 6,
       "critical": 1,
       "watch": 5,
+      "low": 0
+    },
+    "2026-04-30": {
+      "dateKey": "2026-04-30",
+      "date": "April 30, 2026",
+      "summary": "Anthropic retires the 1M context window beta for Sonnet 4.5 and Sonnet 4 today, breaking calls above 200k tokens; Xiaomi's MiMo-V2.5-Pro open source model matches Claude Opus 4.6 on coding benchmarks at 40 to 60 percent lower token cost.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Anthropic 1M context window beta retired for Sonnet 4.5 and Sonnet 4; requests above 200k now return errors",
+          "description": "Effective today, the context-1m-2025-08-07 beta header no longer extends context windows for claude-sonnet-4-5 and claude-sonnet-4-20250514. Any API call to these models exceeding 200k input tokens will return an error with no fallback. Claude Sonnet 4.6 and Claude Opus 4.6 support the full 1M token context window natively at standard pricing without a beta header.",
+          "action": "Audit all API callers that send the context-1m-2025-08-07 beta header or pass more than 200k tokens to Sonnet 4.5 or Sonnet 4. Swap the model tag to claude-sonnet-4-6 or claude-opus-4-6 to restore 1M context access immediately.",
+          "tools": [
+            "Claude API",
+            "Claude Sonnet 4.5",
+            "Claude Sonnet 4",
+            "Claude Sonnet 4.6",
+            "Claude Opus 4.6"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Claude Platform Release Notes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "OpenSource",
+          "headline": "Xiaomi open-sources MiMo-V2.5-Pro under MIT, matching Claude Opus 4.6 on agentic coding at lower token cost",
+          "description": "Xiaomi released MiMo-V2.5-Pro as MIT open source: a 1.02T-parameter Mixture-of-Experts model with 42B active parameters, a 1M token context window, and a hybrid-attention architecture. On ClawEval agentic benchmarks the model achieves 64 percent Pass cubed using 40 to 60 percent fewer tokens than Claude Opus 4.6, Gemini 3.1 Pro, and GPT-5.4 at comparable quality. The model is available via API at one dollar per million input tokens and three dollars per million output tokens, and via Hugging Face for self-hosting. Xiaomi is running a 30-day 100 trillion token grant program for approved builders until May 28.",
+          "action": "Evaluate MiMo-V2.5-Pro as a lower-cost executor model in agentic pipelines currently running Opus-class models. Apply for the 100T token grant at the Xiaomi MiMo Orbit site before May 28 if testing in production. The MIT license allows commercial use without restrictions.",
+          "tools": [
+            "MiMo API",
+            "Hugging Face"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://venturebeat.com/ai/open-source-xiaomi-mimo-v2-5-and-v2-5-pro-are-among-the-most-efficient-and-affordable-at-agentic-claw-tasks",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://finance.biggo.com/news/202604290029_Xiaomi_MiMo-V2.5-Pro_beats_DeepSeek-V4",
+              "name": "BigGo Finance"
+            },
+            {
+              "url": "https://www.thestandard.com.hk/china/article/330592/Xiaomi-open-sources-MiMo-V25-Pro-model-under-MIT-license-topping-benchmarks",
+              "name": "The Standard"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 2,
+      "relevant": 2,
+      "critical": 1,
+      "watch": 1,
       "low": 0
     }
   }
