@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-02T09:00+06:00",
+  "lastUpdated": "2026-05-03T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -338,6 +338,19 @@
     "2026-05-02: DALL-E 2/3 retirement May 12 - announced November 2025. Way stale. Not included.",
     "2026-05-02: DeepSeek model alias deprecation (deepseek-chat, deepseek-reasoner) scheduled July 24 is a future event, not new news. Skipped.",
     "2026-05-02: No detached HEAD issue this session. Repo started on main branch and up to date with origin/main.",
-    "2026-05-02: No new Zapier, Make.com, or Airtable product updates found for May 1-2."
+    "2026-05-02: No new Zapier, Make.com, or Airtable product updates found for May 1-2.",
+    "2026-05-03: 3 items (0 CRITICAL, 3 WATCH, 0 LOW). OpenAI Realtime API Beta retires May 7 in 4 days (WATCH 7), DALL-E 2 and 3 retire May 12 in 9 days (WATCH 7), OpenAI Agents SDK v0.15.1 with ModelRefusalError (WATCH 6).",
+    "2026-05-03: Quiet Sunday. No new Claude Code releases after v2.1.126 (May 1, covered May 2). No new n8n stable (2.19.x still pre-release). GitHub Copilot CLI v1.0.40 already covered May 2. OpenAI Codex 0.129.x all pre-release. platform.claude.com/docs/en/release-notes/overview still shows April 30 as latest entry.",
+    "2026-05-03: OpenAI Realtime API Beta retirement (May 7) and DALL-E 2/3 retirement (May 12) were consistently skipped in prior runs because the announcements were stale (February 27 and November 2025 respectively). Included today because the events are imminent, both have NEVER appeared in any prior digest, and the action is builder-critical (calls will fail). Precedent: cover 'never-covered + imminent deadline' even with stale announcement.",
+    "2026-05-03: OpenAI Agents SDK v0.15.0 (May 1 06:44 UTC) and v0.15.1 (May 2 02:20 UTC) confirmed via direct GitHub releases WebFetch. PyPI search showed v0.14.8 as April 29 - this appears to have been cached or delayed. GitHub releases timestamps are authoritative for publish dates.",
+    "2026-05-03: OpenAI Advanced Account Security (April 30, TechCrunch) evaluated but excluded. It is a WATCH 6 item and April 30 falls outside the 48h window for a non-CRITICAL item on May 3. Would need score 8+ for 72h exception. Skipped per date rules.",
+    "2026-05-03: LiteLLM CVE-2026-42208 (advisory April 20, GitHub indexing April 24, THN coverage April 29) is outside the 48h window for May 3. Already missed its window; skip.",
+    "2026-05-03: Craft Agents OSS by Lukilabs (May 2, Apache 2.0) is a desktop GUI application for individuals to interact with AI assistants. Not an agent framework for building automations. Excluded as not directly relevant to builder audience.",
+    "2026-05-03: Gemini CLI v0.40.1 patch (May 1) is a minor cherry-pick fix from v0.40.0. v0.40.0 (April 28) would have been the substantive release but is outside the 48h window. Skip.",
+    "2026-05-03: Meta Q1 2026 earnings ($125-145B AI capex raise, stock drop) excluded as business/financial event without API or capability change.",
+    "2026-05-03: No new Zapier, Make.com, or Airtable product updates found for May 2-3.",
+    "2026-05-03: No detached HEAD issue this session. Started on main branch and up to date with origin/main.",
+    "2026-05-03: DALL-E 2/3 retirement covered today (May 3). Future May 12 run should reframe as completed event, similar to Haiku 3 (April 20) and 1M context window (April 30).",
+    "2026-05-03: OpenAI Realtime API Beta retirement covered today (May 3) as countdown. Future May 7 run should reframe as completed event. Do NOT re-include as a new item after it is complete."
   ]
 }

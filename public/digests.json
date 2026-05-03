@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-03",
     "2026-05-02",
     "2026-05-01",
     "2026-04-30",
@@ -4471,6 +4472,99 @@
       "totalScanned": 5,
       "relevant": 5,
       "critical": 2,
+      "watch": 3,
+      "low": 0
+    },
+    "2026-05-03": {
+      "dateKey": "2026-05-03",
+      "date": "May 3, 2026",
+      "summary": "Two OpenAI API deadlines arrive within 9 days as Realtime API Beta retires May 7 and DALL-E 2 and 3 shut down May 12; OpenAI Agents SDK v0.15.1 adds explicit model refusal handling for agentic pipelines.",
+      "items": [
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "OpenAI Realtime API Beta retires May 7, migrate to GA endpoint before calls fail",
+          "description": "The Realtime API Beta endpoint and beta WebSocket session format shut down on May 7, 2026, four days from now. Builders must switch to the GA endpoint at /v1/realtime/sessions, which requires specifying a session type (speech-to-speech or transcription) when creating or updating sessions and uses a different key generation call. Calls to the beta endpoint will return errors after the cutoff.",
+          "action": "Before May 7, update all Realtime API integrations to the GA endpoint and add session type to every session create and update call. Review the beta-to-GA migration guide at developers.openai.com for the full list of request shape changes.",
+          "tools": [
+            "OpenAI Realtime API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://developers.openai.com/blog/realtime-api",
+              "name": "OpenAI Developers"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "DALL-E 2 and DALL-E 3 API endpoints retire May 12, replace with gpt-image-2",
+          "description": "OpenAI retires both DALL-E 2 and DALL-E 3 image generation endpoints on May 12, 2026, nine days away. Any code or automation pipeline calling these endpoints will return errors after that date. The replacement is gpt-image-2, launched April 21, with reasoning-native generation and 2K output at token-based pricing ($8 input and $30 output per million tokens), replacing the previous per-image pricing model.",
+          "action": "Search codebases and automation workflows for dall-e-2, dall-e-3, or any /v1/images endpoint calls. Migrate to gpt-image-2 before May 12. Validate prompt parity before cutover since the pricing model has shifted from per-image to per-token.",
+          "tools": [
+            "OpenAI Images API",
+            "gpt-image-2"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://platform.openai.com/docs/deprecations",
+              "name": "OpenAI Platform"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "OpenAI Agents SDK v0.15.1 surfaces model refusals as a catchable exception",
+          "description": "OpenAI shipped v0.15.0 (May 1) and a v0.15.1 patch (May 2) to its Python Agents SDK. The primary change in v0.15.0 is ModelRefusalError, which raises a named exception when a model refuses a request rather than silently returning an empty output, letting pipelines distinguish refusals from network errors. v0.15.1 adds a WebSocket keepalive option for long-running Realtime sessions and fixes Unix PTY signal handling for agent child processes.",
+          "action": "Update openai-agents to 0.15.1 and add explicit ModelRefusalError handlers in safety-sensitive agentic pipelines so refusals are logged and routed correctly rather than treated as empty completions.",
+          "tools": [
+            "OpenAI Agents SDK"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/openai-agents-python/releases",
+              "name": "GitHub"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 0,
       "watch": 3,
       "low": 0
     }
