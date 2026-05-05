@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-05",
     "2026-05-04",
     "2026-05-03",
     "2026-05-02",
@@ -4608,6 +4609,115 @@
       "relevant": 1,
       "critical": 0,
       "watch": 1,
+      "low": 0
+    },
+    "2026-05-05": {
+      "dateKey": "2026-05-05",
+      "date": "May 5, 2026",
+      "summary": "Anthropic red teams a new Jupiter model ahead of the Code with Claude developer conference opening tomorrow in San Francisco, as both Anthropic and OpenAI launch separate enterprise AI deployment ventures on the same day.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Anthropic red teams claude jupiter model ahead of Code with Claude conference opening tomorrow",
+          "description": "TestingCatalog confirmed Anthropic began red team testing a new model codenamed claude-jupiter-v1-p with safety researchers on approximately May 3, two days before the Code with Claude developer conference in San Francisco. The pattern mirrors last year's Neptune codename exercise in June 2025 that preceded the Claude 4 family launch. Jupiter is the largest body in the solar system, consistent with Anthropic's practice of using ascending planetary names for major pre-release safety evaluations.",
+          "action": "Watch the Code with Claude livestream tomorrow May 6 at claude.com/code-with-claude for a likely new major model announcement. Do not lock in multi-year Claude API contracts or large model migration efforts until new model pricing and capability details are public.",
+          "tools": [
+            "Claude API",
+            "Claude Code",
+            "Claude Platform"
+          ],
+          "confidence": "reported",
+          "sources": [
+            {
+              "url": "https://x.com/testingcatalog/status/2049896926997369194",
+              "name": "TestingCatalog"
+            },
+            {
+              "url": "https://www.testingcatalog.com/anthropic-tests-jupiter-v1-p-before-potential-launch-on-may-6/",
+              "name": "TestingCatalog Article"
+            },
+            {
+              "url": "https://claude.com/code-with-claude",
+              "name": "Code with Claude"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 2,
+          "sourceUrl": "https://x.com/testingcatalog/status/2049896926997369194",
+          "sourceName": "TestingCatalog"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.128 adds zip plugin archives MCP tool count and reserves workspace server name",
+          "description": "Released May 4 at 23:01 UTC, Claude Code v2.1.128 lets the --plugin-dir flag accept .zip archives in addition to directories, making plugin distribution simpler without requiring a local directory. The /mcp command now shows a tool count per connected server and flags servers that connected with zero tools, surfacing misconfigured MCP setups immediately. The server name workspace is now reserved and any existing MCP server using that name will be skipped with a warning.",
+          "action": "Update Claude Code to v2.1.128 immediately. Audit any MCP server configs for servers named workspace and rename them before upgrading to avoid silent failures. Use the /mcp command to verify all servers are connecting with the expected tool counts.",
+          "tools": [
+            "Claude Code",
+            "MCP"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.128",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.128",
+          "sourceName": "GitHub Releases"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Anthropic and OpenAI both form enterprise AI deployment companies on the same day",
+          "description": "On May 4, Anthropic announced a joint venture backed by Blackstone, Hellman and Friedman, Goldman Sachs, and others that will embed Anthropic engineers directly inside mid-size companies to redesign workflows around Claude agents, mirroring the Palantir forward-deployment model. Hours later, Bloomberg confirmed OpenAI finalized The Deployment Company, a parallel structure raising over four billion dollars from nineteen private equity investors to scale enterprise GPT rollouts. Both companies moving simultaneously into enterprise professional services signals a structural shift: AI model providers are now competing directly for enterprise integration contracts.",
+          "action": "Reassess how enterprise AI integration services are positioned for clients who ask about deploying Claude or GPT. The labs now offer direct engineering deployment as a competing option. Differentiate on cross-model expertise, existing workflow knowledge, and speed of execution rather than model access alone.",
+          "tools": [
+            "Claude API",
+            "OpenAI API",
+            "Claude Platform"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.cnbc.com/2026/05/04/anthropic-goldman-blackstone-ai-venture.html",
+              "name": "CNBC"
+            },
+            {
+              "url": "https://fortune.com/2026/05/04/anthropic-claude-consulting-industry-joint-venture-blackstone-goldman-sachs/",
+              "name": "Fortune"
+            },
+            {
+              "url": "https://www.bloomberg.com/news/articles/2026-05-04/openai-finalizes-10-billion-joint-venture-with-pe-firms-to-deploy-ai",
+              "name": "Bloomberg"
+            },
+            {
+              "url": "https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/",
+              "name": "TechCrunch"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 1,
+          "sourceUrl": "https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/",
+          "sourceName": "TechCrunch"
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 1,
+      "watch": 2,
       "low": 0
     }
   }

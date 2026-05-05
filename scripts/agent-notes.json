@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-04T09:00+06:00",
+  "lastUpdated": "2026-05-05T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -360,6 +360,20 @@
     "2026-05-04: Items confirmed as already covered in prior digests: Gemini Deep Research Max (April 26), Gemini Embedding 2 GA (April 21 - also too old), OpenAI Realtime API Beta retirement May 7 (covered May 3), DALL-E 2/3 retirement May 12 (covered May 3), LiteLLM CVE-2026-42208 (covered May 3 agent notes as outside window).",
     "2026-05-04: No detached HEAD issue this session. Repository was on main branch and up to date with origin/main.",
     "2026-05-04: No new Zapier, Make.com, or Airtable product updates found for May 2-4.",
-    "2026-05-04: Claude Sonnet 4.8 rumored for May (search results) but no confirmed announcement. Skip as speculation."
+    "2026-05-04: Claude Sonnet 4.8 rumored for May (search results) but no confirmed announcement. Skip as speculation.",
+    "2026-05-05: 3 items (1 CRITICAL, 2 WATCH, 0 LOW). Anthropic claude-jupiter-v1-p red team testing ahead of Code with Claude conference tomorrow May 6 (CRITICAL 8, TestingCatalog X post ~May 3, confidence reported). Claude Code 2.1.128 with zip plugin archives, MCP tool count display, workspace reserved server name (WATCH 7, May 4 23:01 UTC, GitHub releases). Anthropic and OpenAI both launch enterprise AI deployment JVs on same day (WATCH 7, May 4, CNBC/Fortune/Bloomberg/TechCrunch).",
+    "2026-05-05: claude-jupiter-v1-p red team testing (TestingCatalog Threads + X post, snowflake 2049896926997369194 ~ May 3 2026) is within the 48h window. Pattern matches Neptune codename June 2025 which preceded Claude 4 family. Code with Claude conference in SF is May 6, Tokyo June 10-11, London May 19 all livestreamed. Confidence set to reported.",
+    "2026-05-05: Anthropic + OpenAI enterprise JV item included as WATCH 7 professional awareness item despite $1.5B and $10B figures. Framed as market structure shift (AI labs entering enterprise integration services market directly) not as funding news. Both CNBC/Fortune/Bloomberg/TechCrunch confirmed both ventures on May 4.",
+    "2026-05-05: github.com/anthropics/claude-code/releases fetchable. v2.1.128 (May 4 23:01 UTC) is the freshest release. workspace reserved name is the most impactful breaking change.",
+    "2026-05-05: platform.claude.com/docs/en/release-notes/overview still fetchable. Latest entry remains April 30 (1M context window beta retirement). No new Anthropic API entries May 1-5.",
+    "2026-05-05: github.com/n8n-io/n8n/releases shows n8n@2.18.7 (May 4) was bug fix only (webhook userId redaction). Skipped per minor bugfix precedent. n8n 2.19.x still pre-release.",
+    "2026-05-05: github.com/openai/codex/releases shows only 0.129.0-alpha.4 and alpha.5 (May 4). All pre-release. Latest stable remains 0.128.0 from April 30, already covered May 1.",
+    "2026-05-05: github.com/github/copilot-cli/releases shows v1.0.41-0 (May 4) as pre-release. Latest stable remains v1.0.40 (May 1, covered May 2).",
+    "2026-05-05: Mistral Medium 3.5 release date confirmed as April 29 (outside 48h window). IBM Granite 4.1 also April 29-30 (already rejected in May 4 agent notes). Both skipped.",
+    "2026-05-05: Sora API character references update (reusable characters, 20-second clips, 1080p, Batch API) - Twitter snowflake 2032142448970121468 corresponds to approximately March 17-18, 2026. Way outside window. Skipped.",
+    "2026-05-05: OpenAI Workspace Agents credit-based pricing starting May 6 (tomorrow) was mentioned in April 23 digest. Per duplication rule, not re-included. OpenAI Realtime API Beta retirement May 7 also not re-included (covered May 3 countdown).",
+    "2026-05-05: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge (ef11d5c to 96adde5). Root cause persists: sessions start in detached HEAD state.",
+    "2026-05-05: No new Zapier, Make.com, or Airtable product updates found for May 3-5.",
+    "2026-05-05: NOTE for May 6 run: Code with Claude conference is May 6. Likely to produce major Anthropic announcements. Check anthropic.com/news, claude.com/blog, and platform.claude.com/docs for new model or platform changes. If Jupiter launch confirmed, reframe CRITICAL 8 item as completed launch event."
   ]
 }
