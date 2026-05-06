@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-06",
     "2026-05-05",
     "2026-05-04",
     "2026-05-03",
@@ -4718,6 +4719,110 @@
       "relevant": 3,
       "critical": 1,
       "watch": 2,
+      "low": 0
+    },
+    "2026-05-06": {
+      "dateKey": "2026-05-06",
+      "date": "May 6, 2026",
+      "summary": "OpenAI replaces the ChatGPT default with GPT-5.5 Instant cutting hallucinations by half, Anthropic ships 10 financial services agent templates as Claude Code plugins and Managed Agents cookbooks, and GitHub Copilot CLI adds OAuth MCP authentication.",
+      "items": [
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "OpenAI replaces ChatGPT default with GPT-5.5 Instant cutting hallucinations by half",
+          "description": "OpenAI launched GPT-5.5 Instant on May 5 as the new default model across all ChatGPT tiers, replacing GPT-5.3 Instant. The model scores 81.2 on AIME versus 65.4 for its predecessor and delivers 52.5 percent fewer hallucinated claims on high-stakes topics including law, medicine, and finance. API users on the chat-latest alias are now being routed to GPT-5.5 Instant; GPT-5.3 Instant remains accessible by model ID for three months.",
+          "action": "Audit any production integrations using the chat-latest alias; test GPT-5.5 Instant against high-stakes use cases before alias routing switches live traffic.",
+          "tools": [
+            "ChatGPT",
+            "OpenAI API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/",
+              "name": "TechCrunch"
+            },
+            {
+              "url": "https://www.axios.com/2026/05/05/openai-chatgpt-update-default-model",
+              "name": "Axios"
+            },
+            {
+              "url": "https://thenewstack.io/openai-gpt-5-5-instant-launch/",
+              "name": "The New Stack"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Anthropic releases 10 financial services agent templates as Claude Code plugins and Managed Agents cookbooks",
+          "description": "Anthropic launched 10 ready-to-run agent templates for banking and insurance work covering pitchbook drafting, KYC screening, and month-end close. Each template ships simultaneously as a Claude Code plugin, a Claude Cowork package, and a Claude Managed Agents cookbook, making all three deployment paths available on day one. The release adds Moody's Analytics, Dun and Bradstreet, and Verisk as live data connectors to the Anthropic platform.",
+          "action": "Pull the Claude Managed Agents cookbooks and Claude Code plugins for reference architecture on regulated document workflows; the Moody's and D&B connectors are now available for any builder building credit, risk, or entity resolution pipelines.",
+          "tools": [
+            "Claude Code",
+            "Claude Managed Agents",
+            "Claude Cowork"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.bloomberg.com/news/articles/2026-05-05/anthropic-unveils-ai-agents-to-field-financial-services-tasks",
+              "name": "Bloomberg"
+            },
+            {
+              "url": "https://fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon/",
+              "name": "Fortune"
+            },
+            {
+              "url": "https://www.investmentnews.com/fintech/anthropic-rolls-out-financial-services-agents-as-arms-race-with-openai-heats-up/266445",
+              "name": "InvestmentNews"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI 1.0.41 adds OAuth MCP server authentication and automatic shell completion",
+          "description": "Copilot CLI v1.0.41 shipped on May 5 with MCP server authentication now supporting the OAuth flow, closing the headless auth gap for server-to-server MCP pipelines that previously required manual credential handling. The release also adds automatic shell completion installation, faster UI rendering before authentication completes, and improved reliability for file attachment handling in non-interactive prompt mode.",
+          "action": "Update to v1.0.41 if running Copilot CLI as an MCP client in automated pipelines; the OAuth MCP auth eliminates the workaround requirement for authenticated MCP servers.",
+          "tools": [
+            "GitHub Copilot CLI",
+            "MCP"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.41",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 0,
+      "watch": 3,
       "low": 0
     }
   }
